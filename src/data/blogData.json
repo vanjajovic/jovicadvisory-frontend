@@ -1,0 +1,24 @@
+{
+  "blogPosts": [
+    {
+      "id": 1,
+      "slug": "5-najboljih-prodajnih-tehnika-2024",
+      "title": "5 Najboljih Prodajnih Tehnika za 2024. Godinu",
+      "excerpt": "Otkrijte moderne prodajne strategije...",
+      "content": "...",
+      "date": "06.11.2024.",
+      "readTime": "4 min",
+      "image": "/blog/prodajne-tehnike-2024.jpg"
+    },
+    {
+      "id": 2,
+      "slug": "kako-upravljati-prodajnim-timom",
+      "title": "Kako Efikasno Upravljati Prodajnim Timom", 
+      "excerpt": "Savjeti i strategije...",
+      "content": "...",
+      "date": "01.11.2024.",
+      "readTime": "6 min",
+      "image": "/blog/prodajne-tehnike-2024.jpg"
+    }
+  ]
+}

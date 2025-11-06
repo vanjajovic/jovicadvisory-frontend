@@ -1,0 +1,61 @@
+/* components/ServiceMenu.module.css */
+.serviceMenu {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem 0;
+}
+
+.serviceMenuContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.serviceMenuList {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.serviceMenuItem {
+  margin: 0;
+}
+
+.serviceMenuLink {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.serviceMenuLink:hover {
+  color: #000;
+}
+
+.serviceMenuLink.active {
+  color: #000;
+  font-weight: 600;
+}
+
+.serviceMenuLink.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+
+@media (max-width: 768px) {
+  .serviceMenuList {
+    gap: 1rem;
+  }
+}

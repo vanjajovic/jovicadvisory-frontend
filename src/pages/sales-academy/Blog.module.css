@@ -1,0 +1,258 @@
+/* Opšti stilovi za sadržaj */
+.pageDescription {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pageContent {
+  padding: 3rem 1rem;
+  background-color: white;
+}
+
+.contentContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center; /* ← DODAJ OVO */
+}
+
+/* Blog Grid Stilovi */
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.blogCard {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: left; /* ← SADRŽAJ KARTICE LIJEVO */
+}
+
+.blogCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.blogImage {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.blogImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blogContent {
+  padding: 1.5rem;
+}
+
+.blogMeta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.blogDate {
+  font-weight: 500;
+}
+
+.blogReadTime {
+  font-style: italic;
+}
+
+.blogTitle {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #000;
+  line-height: 1.4;
+  text-align: left; /* ← NASLOV LIJEVO */
+}
+
+.blogExcerpt {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: left; /* ← EXCERPT LIJEVO */
+}
+
+.blogReadMore {
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.blogReadMore:hover {
+  text-decoration: underline;
+}
+
+/* Lista svih blogova */
+.allBlogsSection {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.allBlogsSection h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #000;
+}
+
+.allBlogsList {
+  margin-top: 1.5rem;
+  text-align: center; /* ← ARHIVA CENTRIRANA */
+}
+
+.blogListItem {
+  display: inline-block; /* ← PROMJENA ZA CENTRIRANJE */
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  width: 100%;
+  max-width: 600px;
+}
+
+.blogListDate {
+  color: #666;
+  font-size: 0.9rem;
+  display: block; /* ← DATUM IZNAD NASLOVA */
+  margin-bottom: 0.5rem;
+}
+
+.blogListTitle {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  display: block; /* ← NASLOV ISPOD DATUMA */
+}
+
+.blogListTitle:hover {
+  text-decoration: underline;
+}
+
+/* Blog Post Stilovi */
+.backButton {
+  display: inline-block;
+  color: #666;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.backButton:hover {
+  color: #000;
+}
+
+.blogPost {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.blogPostHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.blogPostMeta {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.blogPostTitle {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #000;
+  line-height: 1.2;
+}
+
+.blogPostExcerpt {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.blogPostImage {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.blogPostImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blogPostContent {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #333;
+  text-align: left;
+}
+
+.blogPostContent h2 {
+  margin: 2rem 0 1rem;
+  color: #000;
+}
+
+.blogPostContent blockquote {
+  border-left: 4px solid #000;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pageContent {
+    padding: 2rem 1rem;
+  }
+  
+  .blogGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .blogListItem {
+    display: block;
+    text-align: center;
+  }
+  
+  .blogPostTitle {
+    font-size: 2rem;
+  }
+  
+  .blogPostImage {
+    height: 250px;
+  }
+  
+  .blogPostMeta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "workshops": [
+    {
+      "id": 1,
+      "slug": "prodajna-prezentacija-masterclass",
+      "naziv": "Prodajna Prezentacija Masterclass",
+      "datum": "15. Decembar 2024.",
+      "trajanje": "1 dan",
+      "mjesto": "Sarajevo", 
+      "cijena": "150 KM",
+      "opis": "Intenzivna radionica...",
+      "naglasak": "Praktične vježbe"
+    }
+  ]
+}
