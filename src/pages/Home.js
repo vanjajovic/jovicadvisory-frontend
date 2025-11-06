@@ -1,19 +1,22 @@
 // pages/Home.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Home.module.css';
+import ServiceMenuHome from '../components/ServiceMenuHome';
+import styles from './ServicePage.module.css'; // ← PROMIJENI OVO!
 
 const Home = () => {
   return (
-    <div className={styles.home}>
-      {/* Service header look - BEZ LOGA, samo naslov kao na drugim stranicama */}
+    <div className={styles.servicePage}>
+      {/* Service Header - BEZ LOGA */}
       <div className={styles.serviceHeader}>
         <h1 className={styles.serviceTitle}>Jović Advisory</h1>
-        <p className={styles.serviceSubtitle}>Stručno savjetovanje i konsalting usluge</p>
       </div>
       
-      {/* Services grid */}
-      <div className={styles.services}>
+      {/* Service Menu */}
+      <ServiceMenuHome />
+      
+      {/* Services Grid */}
+      <div className={styles.pageContent}>
         <div className={styles.serviceGrid}>
           <a href="https://vitaxosiguranje.com/" className={styles.serviceCard}>
             <h2 className={styles.serviceCardTitle}>Osiguranje</h2>

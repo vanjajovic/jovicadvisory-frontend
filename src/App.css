@@ -18,7 +18,7 @@ body {
 }
 
 .main-content {
-  padding-top: 60px; /* ← OVO RIJEŠAVA SVE! */
+  padding-top: var(--header-height, 60px); /* Desktop */
 }
 
 /* Global link styles */
@@ -42,4 +42,29 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+/* ← DODAJ OVO NA KRAJ */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding-top: 45px;
+  }
+}
+
+@media (max-width: 454px) {
+  .main-content {
+    padding-top: 40px;
+  }
+}
+
+@media (max-width: 380px) {
+  .main-content {
+    padding-top: 35px;
+  }
 }
