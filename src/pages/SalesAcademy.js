@@ -14,9 +14,6 @@ const SalesAcademy = () => {
   return (
     <div className={styles.servicePage}>
       <div className={styles.serviceHeader}>
-        <div className={styles.serviceLogo}>
-          <img src="/academy-logo.png" alt="Jović Akademija prodaje" />
-        </div>
         <h1 className={styles.serviceTitle}>Akademija prodaje</h1>
       </div>
       

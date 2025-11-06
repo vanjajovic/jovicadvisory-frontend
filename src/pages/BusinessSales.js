@@ -67,9 +67,7 @@ const BusinessSales = () => {
   return (
     <div className={styles.servicePage}>
       <div className={styles.serviceHeader}>
-        <div className={styles.serviceLogo}>
-          <img src="/logo.png" alt="Jović Prodaja biznisa" />
-        </div>
+        
         <h1 className={styles.serviceTitle}>Prodaja biznisa</h1>
       </div>
       

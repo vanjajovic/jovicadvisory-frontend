@@ -36,14 +36,13 @@ const Contact = () => {
         <div className={styles.contactContainer}>
           
           <div className={styles.contactInfo}>
-            <div className={styles.contactItem}>
-              <p>info@jovicadvisory.com</p>
-            </div>
-            <div className={styles.contactItem}>
-              <p>+387 33 123 456</p>
-            </div>
+            <p className={styles.contactLine}>Jović Advisory</p>
+            <p className={styles.contactLine}>Jug Bogdana 18, Banja Luka</p>
+            <p className={styles.contactLine}>info@jovicadvisory.com</p>
           </div>
 
+          <h3 className={styles.formTitle}>Pošaljite poruku</h3>
+          
           <form onSubmit={handleSubmit} className={styles.contactForm}>
             <div className={styles.formGroup}>
               <input
