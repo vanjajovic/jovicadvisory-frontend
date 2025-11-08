@@ -18,10 +18,10 @@ const Home = () => {
       {/* Services Grid */}
       <div className={styles.pageContent}>
         <div className={styles.serviceGrid}>
-          <a href="https://vitaxosiguranje.com/" className={styles.serviceCard}>
+          <a href="/osiguranje" className={styles.serviceCard}>
             <h2 className={styles.serviceCardTitle}>Osiguranje</h2>
             <p className={styles.serviceCardDescription}>
-              Kompletno zastupanje u osiguranju sa fokusom na zaštitu vaših interesa
+              Zastupanje u osiguranju, podrška za upravljanje osiguranjem i softver za upravljanje osiguranjem
             </p>
           </a>
           

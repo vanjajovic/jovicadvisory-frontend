@@ -9,7 +9,8 @@ const ServiceMenuAcademy = () => {
   const servicePages = [
     { name: 'Blog', path: '/akademija-prodaje' },
     { name: 'Mentorstvo', path: '/akademija-prodaje/mentorstvo' },
-    { name: 'Radionice', path: '/akademija-prodaje/radionice' }
+    { name: 'Radionice', path: '/akademija-prodaje/radionice' },
+    { name: 'Kontakt', path: '/akademija-prodaje/kontakt' } // DODAJTE OVO
   ];
 
   return (
@@ -21,7 +22,7 @@ const ServiceMenuAcademy = () => {
               <Link 
                 to={page.path}
                 className={`${styles.serviceMenuLink} ${
-                  location.pathname === page.path ? styles.active : ''
+                  location.pathname.startsWith(page.path) ? styles.active : ''
                 }`}
               >
                 {page.name}

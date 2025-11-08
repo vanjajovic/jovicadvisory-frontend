@@ -7,11 +7,11 @@ const ServiceMenuBusiness = () => {
   const location = useLocation();
   
   const servicePages = [
-    { name: 'Početna', path: '/prodaja-biznisa' },
-    { name: 'Usluge', path: '/prodaja-biznisa/usluge' },
-    { name: 'Proces', path: '/prodaja-biznisa/proces' },
-    { name: 'Uslovi', path: '/prodaja-biznisa/uslovi' },
-    { name: 'Konsultacije', path: '/prodaja-biznisa/konsultacije' }
+    { name: 'Blog', path: '/prodaja-biznisa' }, // Blog kao početna
+    { name: 'M&A Readiness', path: '/prodaja-biznisa/ma-readiness' },
+    { name: 'M&A Zastupanje', path: '/prodaja-biznisa/ma-zastupanje' },
+    { name: 'Deal Sourcing', path: '/prodaja-biznisa/deal-sourcing' },
+    { name: 'Kontakt', path: '/prodaja-biznisa/kontakt' }
   ];
 
   return (
@@ -23,7 +23,7 @@ const ServiceMenuBusiness = () => {
               <Link 
                 to={page.path}
                 className={`${styles.serviceMenuLink} ${
-                  location.pathname === page.path ? styles.active : ''
+                  location.pathname.startsWith(page.path) ? styles.active : ''
                 }`}
               >
                 {page.name}

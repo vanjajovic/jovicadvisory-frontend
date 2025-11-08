@@ -1,61 +1,60 @@
 // pages/BusinessSales.js
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import ServiceMenuBusiness from '../components/ServiceMenuBusiness'; // Promijenjen import
+import ServiceMenuBusiness from '../components/ServiceMenuBusiness';
 import styles from './ServicePage.module.css';
 
-const BusinessSalesMain = () => {
+// NOVE KOMPONENTE PO ZAHTJEVU
+const BlogProdajaBiznisa = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <div className={styles.comingSoon}>
-          <p>Biće uskoro</p>
-        </div>
-        <p>Stranica je u pripremi. Uskoro će biti dostupna sa informacijama o našim uslugama prodaje biznisa.</p>
+        <h2>Blog - Prodaja biznisa</h2>
+        <p>Najnovije vijesti, savjeti i analize o prodaji biznisa i M&A transakcijama.</p>
       </div>
     </div>
   );
 };
 
-const Usluge = () => {
+const MAReadiness = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h2>Naše usluge</h2>
-        <p>Kompletne usluge prodaje biznisa i savjetovanja.</p>
+        <h2>M&A Readiness</h2>
+        <p>Priprema vašeg biznisa za M&A transakcije i procjenu vrijednosti.</p>
       </div>
     </div>
   );
 };
 
-const Proces = () => {
+const MAZastupanje = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h2>Proces prodaje</h2>
-        <p>Kako funkcioniše proces prodaje biznisa.</p>
+        <h2>M&A Zastupanje</h2>
+        <p>Kompletno zastupanje u M&A pregovorima i transakcijama.</p>
       </div>
     </div>
   );
 };
 
-const Uslovi = () => {
+const DealSourcing = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h2>Uslovi saradnje</h2>
-        <p>Uslovi pod kojima radimo.</p>
+        <h2>Deal Sourcing</h2>
+        <p>Pronalaženje i evaluacija investicionih prilika.</p>
       </div>
     </div>
   );
 };
 
-const Konsultacije = () => {
+const KontaktProdajaBiznisa = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h2>Besplatne konsultacije</h2>
-        <p>Zakažite besplatne konsultacije za prodaju vašeg biznisa.</p>
+        <h2>Kontakt - Prodaja biznisa</h2>
+        <p>Kontakt informacije specifične za odjel prodaje biznisa.</p>
       </div>
     </div>
   );
@@ -67,18 +66,19 @@ const BusinessSales = () => {
   return (
     <div className={styles.servicePage}>
       <div className={styles.serviceHeader}>
-        
         <h1 className={styles.serviceTitle}>Prodaja biznisa</h1>
       </div>
       
-      <ServiceMenuBusiness /> {/* Koristi posebni menu za prodaju biznisa */}
+      <ServiceMenuBusiness />
       
       <Routes>
-        <Route index element={<BusinessSalesMain />} />
-        <Route path="usluge" element={<Usluge />} />
-        <Route path="proces" element={<Proces />} />
-        <Route path="uslovi" element={<Uslovi />} />
-        <Route path="konsultacije" element={<Konsultacije />} />
+        <Route index element={<BlogProdajaBiznisa />} /> {/* Blog kao početna */}
+        <Route path="blog" element={<BlogProdajaBiznisa />} />
+        <Route path="blog/:id" element={<BlogProdajaBiznisa />} /> {/* Za buduće postove */}
+        <Route path="ma-readiness" element={<MAReadiness />} />
+        <Route path="ma-zastupanje" element={<MAZastupanje />} />
+        <Route path="deal-sourcing" element={<DealSourcing />} />
+        <Route path="kontakt" element={<KontaktProdajaBiznisa />} />
       </Routes>
     </div>
   );

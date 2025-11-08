@@ -7,10 +7,10 @@ const ServiceMenuInsurance = () => {
   const location = useLocation();
   
   const servicePages = [
-    { name: 'Početna', path: '/osiguranje' },
-    { name: 'Vrste osiguranja', path: '/osiguranje/vrste-osiguranja' },
-    { name: 'Cjenovnik', path: '/osiguranje/cjenovnik' },
-    { name: 'Česta pitanja', path: '/osiguranje/cesta-pitanja' },
+    { name: 'Blog', path: '/osiguranje' }, // Ovo će pokriti: /osiguranje, /osiguranje/blog, /osiguranje/blog/neki-post...
+    { name: 'Zastupanje u osiguranju', path: 'https://vitaxosiguranje.com/', external: true },
+    { name: 'Podrška', path: '/osiguranje/podrska' },
+    { name: 'Vitaximmo app', path: '/osiguranje/vitaximmo-app' },
     { name: 'Kontakt', path: '/osiguranje/kontakt' }
   ];
 
@@ -20,14 +20,26 @@ const ServiceMenuInsurance = () => {
         <ul className={styles.serviceMenuList}>
           {servicePages.map((page) => (
             <li key={page.path} className={styles.serviceMenuItem}>
-              <Link 
-                to={page.path}
-                className={`${styles.serviceMenuLink} ${
-                  location.pathname === page.path ? styles.active : ''
-                }`}
-              >
-                {page.name}
-              </Link>
+              {page.external ? (
+                <a 
+                  href={page.path}
+                  className={styles.serviceMenuLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {page.name}
+                </a>
+              ) : (
+                <Link 
+                  to={page.path}
+                  className={`${styles.serviceMenuLink} ${
+                    // PROMJENA OVDJE: startsWith umjesto ===
+                    location.pathname.startsWith(page.path) ? styles.active : ''
+                  }`}
+                >
+                  {page.name}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

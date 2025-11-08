@@ -7,7 +7,7 @@ const ServiceMenuHome = () => {
   const location = useLocation();
   
   const servicePages = [
-    { name: 'Osiguranje', path: 'https://vitaxosiguranje.com/' },
+    { name: 'Osiguranje', path: '/osiguranje' },
     { name: 'Akademija prodaje', path: '/akademija-prodaje' },
     { name: 'Prodaja biznisa', path: '/prodaja-biznisa' },
     { name: 'Kontakt', path: '/kontakt' }

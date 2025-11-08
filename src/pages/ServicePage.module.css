@@ -311,3 +311,50 @@
 .contactForm button:hover {
   background: #333;
 }
+
+.mentorstvoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.mentorstvoCard {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.mentorstvoPrednosti {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.mentorstvoPrednosti ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mentorstvoPrednosti li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.mentorstvoPrednosti li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mentorstvoGrid {
+    grid-template-columns: 1fr;
+  }
+}

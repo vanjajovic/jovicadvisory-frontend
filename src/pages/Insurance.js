@@ -1,56 +1,44 @@
 // pages/Insurance.js
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import ServiceMenuInsurance from '../components/ServiceMenuInsurance'; // Promijenjen import
+import ServiceMenuInsurance from '../components/ServiceMenuInsurance';
 import styles from './ServicePage.module.css';
 
-const InsuranceMain = () => {
+// ZADRŽAVAMO SAMO BITNE KOMPONENTE
+const BlogOsiguranje = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <div className={styles.comingSoon}>
-          <p>Biće uskoro</p>
-        </div>
-        <p>Stranica je u pripremi. Uskoro će biti dostupna sa kompletnim informacijama o našim uslugama zastupanja u osiguranju.</p>
+        <h2>Blog o Osiguranju</h2>
+        <p>Najnovije vijesti i savjeti iz svijeta osiguranja.</p>
       </div>
     </div>
   );
 };
 
-const VrsteOsiguranja = () => {
+const PodrskaOsiguranje = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h2>Vrste osiguranja</h2>
-        <p>Detalji o različitim vrstama osiguranja koje nudimo.</p>
+        <h2>Podrška za Osiguranje</h2>
+        <p>Pomoć i podrška za sva pitanja vezana uz osiguranje.</p>
       </div>
     </div>
   );
 };
 
-const Cjenovnik = () => {
+const VitaximmoAppOsiguranje = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h2>Cjenovnik osiguranja</h2>
-        <p>Informacije o cijenama naših usluga osiguranja.</p>
+        <h2>Vitaximmo App za Osiguranje</h2>
+        <p>Naša mobilna aplikacija za upravljanje osiguranjima.</p>
       </div>
     </div>
   );
 };
 
-const CestaPitanja = () => {
-  return (
-    <div className={styles.pageContent}>
-      <div className={styles.contentContainer}>
-        <h2>Česta pitanja</h2>
-        <p>Odgovori na najčešća pitanja o osiguranju.</p>
-      </div>
-    </div>
-  );
-};
-
-const ContactService = () => {
+const KontaktOsiguranje = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
@@ -68,19 +56,18 @@ const Insurance = () => {
     <div className={styles.servicePage}>
       <div className={styles.serviceHeader}>
         <div className={styles.serviceLogo}>
-          <img src="/insurance-logo.png" alt="Jović Osiguranje" />
         </div>
         <h1 className={styles.serviceTitle}>Osiguranje</h1>
       </div>
       
-      <ServiceMenuInsurance /> {/* Koristi posebni menu za osiguranje */}
+      <ServiceMenuInsurance />
       
       <Routes>
-        <Route index element={<InsuranceMain />} />
-        <Route path="vrste-osiguranja" element={<VrsteOsiguranja />} />
-        <Route path="cjenovnik" element={<Cjenovnik />} />
-        <Route path="cesta-pitanja" element={<CestaPitanja />} />
-        <Route path="kontakt" element={<ContactService />} />
+        <Route index element={<BlogOsiguranje />} /> {/* Blog kao početna */}
+        <Route path="blog" element={<BlogOsiguranje />} />
+        <Route path="podrska" element={<PodrskaOsiguranje />} />
+        <Route path="vitaximmo-app" element={<VitaximmoAppOsiguranje />} />
+        <Route path="kontakt" element={<KontaktOsiguranje />} />
       </Routes>
     </div>
   );
