@@ -7,10 +7,10 @@ const ServiceMenuAcademy = () => {
   const location = useLocation();
   
   const servicePages = [
-    { name: 'Blog', path: '/akademija-prodaje' },
-    { name: 'Mentorstvo', path: '/akademija-prodaje/mentorstvo' },
-    { name: 'Radionice', path: '/akademija-prodaje/radionice' },
-    { name: 'Kontakt', path: '/akademija-prodaje/kontakt' } // DODAJTE OVO
+    { name: 'Blog', path: '/prodajna-radionica' },
+    { name: 'Mentorstvo', path: '/prodajna-radionica/mentorstvo' },
+    { name: 'Radionice', path: '/prodajna-radionica/radionice' },
+    { name: 'Kontakt', path: '/prodajna-radionica/kontakt' } // DODAJTE OVO
   ];
 
   return (

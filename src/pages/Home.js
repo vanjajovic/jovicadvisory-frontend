@@ -25,8 +25,8 @@ const Home = () => {
             </p>
           </a>
           
-          <Link to="/akademija-prodaje" className={styles.serviceCard}>
-            <h2 className={styles.serviceCardTitle}>Akademija prodaje</h2>
+          <Link to="/prodajna-radionica" className={styles.serviceCard}>
+            <h2 className={styles.serviceCardTitle}>Prodajna radionica</h2>
             <p className={styles.serviceCardDescription}>
               Edukativni programi za unapređenje prodajnih vještina i poslovnih performansi
             </p>

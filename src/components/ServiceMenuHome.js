@@ -8,7 +8,7 @@ const ServiceMenuHome = () => {
   
   const servicePages = [
     { name: 'Osiguranje', path: '/osiguranje' },
-    { name: 'Akademija prodaje', path: '/akademija-prodaje' },
+    { name: 'Prodajna radionica', path: '/prodajna-radionica' },
     { name: 'Prodaja biznisa', path: '/prodaja-biznisa' },
     { name: 'Kontakt', path: '/kontakt' }
   ];

@@ -2,26 +2,20 @@
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import ServiceMenuBusiness from '../components/ServiceMenuBusiness';
+import BlogList from '../components/blog/BlogList';
+import BlogPost from '../components/blog/BlogPost';
+import blogData from '../data/blog/business-sales.json';
 import styles from './ServicePage.module.css';
 
-// NOVE KOMPONENTE PO ZAHTJEVU
-const BlogProdajaBiznisa = () => {
-  return (
-    <div className={styles.pageContent}>
-      <div className={styles.contentContainer}>
-        <h2>Blog - Prodaja biznisa</h2>
-        <p>Najnovije vijesti, savjeti i analize o prodaji biznisa i M&A transakcijama.</p>
-      </div>
-    </div>
-  );
-};
-
+// KONZISTENTNO SA OSTALIM SERVICE-IMA - VECI FONT
 const MAReadiness = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h2>M&A Readiness</h2>
-        <p>Priprema vašeg biznisa za M&A transakcije i procjenu vrijednosti.</p>
+        <h1>M&A Readiness</h1>
+        <p className={styles.pageDescription}>
+          Priprema vašeg biznisa za M&A transakcije i procjenu vrijednosti.
+        </p>
       </div>
     </div>
   );
@@ -31,8 +25,10 @@ const MAZastupanje = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h2>M&A Zastupanje</h2>
-        <p>Kompletno zastupanje u M&A pregovorima i transakcijama.</p>
+        <h1>M&A Zastupanje</h1>
+        <p className={styles.pageDescription}>
+          Kompletno zastupanje u M&A pregovorima i transakcijama.
+        </p>
       </div>
     </div>
   );
@@ -42,8 +38,10 @@ const DealSourcing = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h2>Deal Sourcing</h2>
-        <p>Pronalaženje i evaluacija investicionih prilika.</p>
+        <h1>Deal Sourcing</h1>
+        <p className={styles.pageDescription}>
+          Pronalaženje i evaluacija investicionih prilika i potencijalnih kupaca.
+        </p>
       </div>
     </div>
   );
@@ -53,8 +51,10 @@ const KontaktProdajaBiznisa = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h2>Kontakt - Prodaja biznisa</h2>
-        <p>Kontakt informacije specifične za odjel prodaje biznisa.</p>
+        <h1>Kontakt - Prodaja biznisa</h1>
+        <p className={styles.pageDescription}>
+          Kontakt informacije specifične za odjel prodaje biznisa.
+        </p>
       </div>
     </div>
   );
@@ -72,9 +72,31 @@ const BusinessSales = () => {
       <ServiceMenuBusiness />
       
       <Routes>
-        <Route index element={<BlogProdajaBiznisa />} /> {/* Blog kao početna */}
-        <Route path="blog" element={<BlogProdajaBiznisa />} />
-        <Route path="blog/:id" element={<BlogProdajaBiznisa />} /> {/* Za buduće postove */}
+        {/* BLOG KAO POČETNA SA SHARED KOMPONENTAMA */}
+        <Route 
+          index 
+          element={
+            <BlogList 
+              blogData={blogData}
+              basePath="/prodaja-biznisa"
+              title="Blog - Prodaja biznisa"
+              description="Najnovije vijesti, savjeti i analize o prodaji biznisa i M&A transakcijama. Ekspertski uvidi u procese valuacije, pregovaranja i tranzicije vlasništva."
+            />
+          } 
+        />
+        
+        {/* BLOG POSTOVI SA SHARED KOMPONENTAMA */}
+        <Route 
+          path="blog/:slug" 
+          element={
+            <BlogPost 
+              blogData={blogData}
+              basePath="/prodaja-biznisa"
+            />
+          } 
+        />
+        
+        {/* OSTALE RUTE - KONZISTENTNE VELIČINE */}
         <Route path="ma-readiness" element={<MAReadiness />} />
         <Route path="ma-zastupanje" element={<MAZastupanje />} />
         <Route path="deal-sourcing" element={<DealSourcing />} />

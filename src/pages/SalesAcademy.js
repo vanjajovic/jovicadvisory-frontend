@@ -57,9 +57,9 @@ const KontaktAkademija = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h1>Kontakt - Akademija prodaje</h1>
+        <h1>Kontakt - Prodajna radionica</h1>
         <p className={styles.pageDescription}>
-          Kontakt informacije specifične za Akademiju prodaje.
+          Kontakt informacije specifične za Prodajnu radionicu.
         </p>
       </div>
     </div>
@@ -72,7 +72,7 @@ const SalesAcademy = () => {
   return (
     <div className={styles.servicePage}>
       <div className={styles.serviceHeader}>
-        <h1 className={styles.serviceTitle}>Akademija prodaje</h1>
+        <h1 className={styles.serviceTitle}>Prodajna radionica</h1>
       </div>
       
       <ServiceMenuAcademy />
@@ -83,8 +83,8 @@ const SalesAcademy = () => {
           element={
             <BlogList 
               blogData={blogData}
-              basePath="/akademija-prodaje"
-              title="Blog - Akademija prodaje"
+              basePath="/prodajna-radionica"
+              title="Blog Prodajne radionice"
               description="Pratite najnovije trendove, savjete i strategije iz svijeta prodaje. Naš tim stručnjaka dijeli iskustva koja će vam pomoći da postignete bolje rezultate."
             />
           } 
@@ -95,7 +95,7 @@ const SalesAcademy = () => {
           element={
             <BlogPost 
               blogData={blogData}
-              basePath="/akademija-prodaje"
+              basePath="/prodajna-radionica"
             />
           } 
         />
@@ -105,7 +105,7 @@ const SalesAcademy = () => {
           element={
             <RadioniceList 
               radioniceData={radioniceData}
-              basePath="/akademija-prodaje"
+              basePath="/prodajna-radionica"
             />
           } 
         />
@@ -115,7 +115,7 @@ const SalesAcademy = () => {
           element={
             <RadionicaPost 
               radioniceData={radioniceData}
-              basePath="/akademija-prodaje"
+              basePath="/prodajna-radionica"
             />
           } 
         />

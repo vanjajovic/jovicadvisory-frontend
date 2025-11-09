@@ -35,13 +35,18 @@ const Contact = () => {
       <div className={styles.pageContent}>
         <div className={styles.contactContainer}>
           
+          {/* KONZISTENTNI STILOVI KAO BLOG NASLOVI */}
           <div className={styles.contactInfo}>
-            <p className={styles.contactLine}>Jović Advisory</p>
-            <p className={styles.contactLine}>Jug Bogdana 18, Banja Luka</p>
-            <p className={styles.contactLine}>info@jovicadvisory.com</p>
+            <h1 className={styles.contactCompany}>Jović Advisory</h1>
+            <p className={styles.pageDescription}>
+              Jug Bogdana 18, Banja Luka
+            </p>
+            <p className={styles.pageDescription}>
+              info@jovicadvisory.com
+            </p>
           </div>
 
-          <h3 className={styles.formTitle}>Pošaljite poruku</h3>
+          <h1 className={styles.formTitle}>Pošaljite poruku</h1>
           
           <form onSubmit={handleSubmit} className={styles.contactForm}>
             <div className={styles.formGroup}>
