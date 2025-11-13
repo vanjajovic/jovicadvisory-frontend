@@ -7,11 +7,11 @@ const ServiceMenuBusiness = () => {
   const location = useLocation();
   
   const servicePages = [
-    { name: 'Blog', path: '/prodaja-biznisa' }, // Blog kao početna
-    { name: 'M&A Readiness', path: '/prodaja-biznisa/ma-readiness' },
-    { name: 'M&A Zastupanje', path: '/prodaja-biznisa/ma-zastupanje' },
-    { name: 'Deal Sourcing', path: '/prodaja-biznisa/deal-sourcing' },
-    { name: 'Kontakt', path: '/prodaja-biznisa/kontakt' }
+    { name: 'Blog', path: '/prenos-biznisa' }, // Blog kao početna
+    { name: 'M&A', path: '/prenos-biznisa/ma' },
+    { name: 'Deal Sourcing', path: '/prenos-biznisa/deal-sourcing' },
+    { name: 'Next Gen', path: '/prenos-biznisa/next-gen' },
+    { name: 'Kontakt', path: '/prenos-biznisa/kontakt' }
   ];
 
   return (

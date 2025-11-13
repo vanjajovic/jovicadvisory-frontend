@@ -21,21 +21,21 @@ const Home = () => {
           <a href="/osiguranje" className={styles.serviceCard}>
             <h2 className={styles.serviceCardTitle}>Osiguranje</h2>
             <p className={styles.serviceCardDescription}>
-              Zastupanje u osiguranju, podrška za upravljanje osiguranjem i softver za upravljanje osiguranjem
+              Zastupanje u osiguranju i softver za upravljanje osiguranjem
             </p>
           </a>
           
           <Link to="/prodajna-radionica" className={styles.serviceCard}>
             <h2 className={styles.serviceCardTitle}>Prodajna radionica</h2>
             <p className={styles.serviceCardDescription}>
-              Edukativni programi za unapređenje prodajnih vještina i poslovnih performansi
+              Edukativni programi za unapređenje prodaje
             </p>
           </Link>
           
-          <Link to="/prodaja-biznisa" className={styles.serviceCard}>
-            <h2 className={styles.serviceCardTitle}>Prodaja biznisa</h2>
+          <Link to="/prenos-biznisa" className={styles.serviceCard}>
+            <h2 className={styles.serviceCardTitle}>Prenos biznisa</h2>
             <p className={styles.serviceCardDescription}>
-              Stručna podrška u procesu prodaje poslovanja i transfera vlasništva
+              Stručna podrška u procesu prenosa poslovanja
             </p>
           </Link>
         </div>

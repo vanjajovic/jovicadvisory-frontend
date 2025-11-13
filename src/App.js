@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Insurance from './pages/Insurance';
 import SalesAcademy from './pages/SalesAcademy';
-import BusinessSales from './pages/BusinessSales';
+import BusinessTransfer from './pages/BusinessTransfer';
 import Contact from './pages/Contact';
 import './App.css';
 
@@ -19,7 +19,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/osiguranje/*" element={<Insurance />} />
             <Route path="/prodajna-radionica/*" element={<SalesAcademy />} />
-            <Route path="/prodaja-biznisa/*" element={<BusinessSales />} />
+            <Route path="/prenos-biznisa/*" element={<BusinessTransfer />} />
             <Route path="/kontakt" element={<Contact />} />
           </Routes>
         </main>

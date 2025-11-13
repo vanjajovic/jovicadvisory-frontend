@@ -11,7 +11,7 @@ const ServiceMenu = () => {
   const getCurrentService = () => {
     if (location.pathname.includes('osiguranje')) return 'osiguranje';
     if (location.pathname.includes('akademija-prodaje')) return 'akademija-prodaje';
-    if (location.pathname.includes('prodaja-biznisa')) return 'prodaja-biznisa';
+    if (location.pathname.includes('prenos-biznisa')) return 'prenos-biznisa';
     return null;
   };
 
