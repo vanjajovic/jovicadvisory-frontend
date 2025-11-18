@@ -32,10 +32,10 @@ const Home = () => {
             </p>
           </Link>
           
-          <Link to="/prenos-biznisa" className={styles.serviceCard}>
-            <h2 className={styles.serviceCardTitle}>Prenos biznisa</h2>
+          <Link to="/business" className={styles.serviceCard}>
+            <h2 className={styles.serviceCardTitle}>Prodaja poslovanja</h2>
             <p className={styles.serviceCardDescription}>
-              Stručna podrška u procesu prenosa poslovanja
+              Stručna podrška u procesu prodaje poslovanja
             </p>
           </Link>
         </div>

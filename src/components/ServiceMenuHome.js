@@ -9,7 +9,7 @@ const ServiceMenuHome = () => {
   const servicePages = [
     { name: 'Osiguranje', path: '/osiguranje' },
     { name: 'Prodajna radionica', path: '/prodajna-radionica' },
-    { name: 'Prenos biznisa', path: '/prenos-biznisa' },
+    { name: 'Prodaja poslovanja', path: '/business' },
     { name: 'Kontakt', path: '/kontakt' }
   ];
 
