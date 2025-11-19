@@ -1,16 +1,16 @@
-// components/ServiceMenuBusiness.js
+// components/ServiceMenuSales.js
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './ServiceMenu.module.css';
 
-const ServiceMenuBusiness = () => {
+const ServiceMenuSales = () => {
   const location = useLocation();
   
   const servicePages = [
-    { name: 'Blog', path: '/business' }, // Blog kao početna
-    { name: 'Zastupanje', path: '/business/zastupanje' },
-    { name: 'Deal Sourcing', path: '/business/deal-sourcing' },
-    { name: 'Kontakt', path: '/business/kontakt' }
+    { name: 'Blog', path: '/radionica-prodaje' },
+    { name: 'Mentorstvo', path: '/radionica-prodaje/mentorstvo' },
+    { name: 'M&A zastupanje', path: '/radionica-prodaje/m&a' },
+    { name: 'Kontakt', path: '/radionica-prodaje/kontakt' } // DODAJTE OVO
   ];
 
   return (
@@ -35,4 +35,4 @@ const ServiceMenuBusiness = () => {
   );
 };
 
-export default ServiceMenuBusiness;
+export default ServiceMenuSales;

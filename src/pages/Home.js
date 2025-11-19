@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ServiceMenuHome from '../components/ServiceMenuHome';
-import styles from './ServicePage.module.css'; // ← PROMIJENI OVO!
+import styles from './ServicePage.module.css';
 
 const Home = () => {
   return (
@@ -25,17 +25,17 @@ const Home = () => {
             </p>
           </a>
           
-          <Link to="/prodajna-radionica" className={styles.serviceCard}>
-            <h2 className={styles.serviceCardTitle}>Prodajna radionica</h2>
+          <Link to="/radionica-prodaje" className={styles.serviceCard}>
+            <h2 className={styles.serviceCardTitle}>Radionica prodaje</h2>
             <p className={styles.serviceCardDescription}>
-              Edukativni programi za unapređenje prodaje
+              Unapređenje prodaje
             </p>
           </Link>
           
-          <Link to="/business" className={styles.serviceCard}>
-            <h2 className={styles.serviceCardTitle}>Prodaja poslovanja</h2>
+          <Link to="/radionica-proizvoda" className={styles.serviceCard}>
+            <h2 className={styles.serviceCardTitle}>Radionica proizvoda</h2>
             <p className={styles.serviceCardDescription}>
-              Stručna podrška u procesu prodaje poslovanja
+              Radionica proizvoda
             </p>
           </Link>
         </div>

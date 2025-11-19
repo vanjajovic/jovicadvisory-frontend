@@ -1,13 +1,13 @@
 // pages/SalesAcademy.js
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import ServiceMenuAcademy from '../components/ServiceMenuAcademy';
+import ServiceMenuSales from '../components/ServiceMenuSales';
 import BlogList from '../components/blog/BlogList';
 import BlogPost from '../components/blog/BlogPost';
 import RadioniceList from '../components/radionice/RadioniceList';
 import RadionicaPost from '../components/radionice/RadionicaPost';
-import blogData from '../data/blog/sales-academy.json';
-import radioniceData from '../data/radionice/sales-academy.json';
+import blogData from '../data/blog/sales.json';
+import radioniceData from '../data/radionice/sales.json';
 import styles from './ServicePage.module.css';
 
 // KORISTI BLOG.MODULE.CSS ZA KONZISTENTNOST
@@ -57,25 +57,25 @@ const KontaktAkademija = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h1>Kontakt - Prodajna radionica</h1>
+        <h1>Kontakt - Radionica prodaje</h1>
         <p className={styles.pageDescription}>
-          Kontakt informacije specifične za Prodajnu radionicu.
+          Kontakt informacije za Radionicu prodaje.
         </p>
       </div>
     </div>
   );
 };
 
-const SalesAcademy = () => {
+const Sales = () => {
   const location = useLocation();
 
   return (
     <div className={styles.servicePage}>
       <div className={styles.serviceHeader}>
-        <h1 className={styles.serviceTitle}>Prodajna radionica</h1>
+        <h1 className={styles.serviceTitle}>Radionica prodaje</h1>
       </div>
       
-      <ServiceMenuAcademy />
+      <ServiceMenuSales />
       
       <Routes>
         <Route 
@@ -83,8 +83,8 @@ const SalesAcademy = () => {
           element={
             <BlogList 
               blogData={blogData}
-              basePath="/prodajna-radionica"
-              title="Blog Prodajne radionice"
+              basePath="/radionica-prodaje"
+              title="Blog radionice prodaje"
               description="Pratite najnovije trendove, savjete i strategije iz svijeta prodaje. Naš tim stručnjaka dijeli iskustva koja će vam pomoći da postignete bolje rezultate."
             />
           } 
@@ -95,7 +95,7 @@ const SalesAcademy = () => {
           element={
             <BlogPost 
               blogData={blogData}
-              basePath="/prodajna-radionica"
+              basePath="/radionica-prodaje"
             />
           } 
         />
@@ -105,7 +105,7 @@ const SalesAcademy = () => {
           element={
             <RadioniceList 
               radioniceData={radioniceData}
-              basePath="/prodajna-radionica"
+              basePath="/radionica-prodaje"
             />
           } 
         />
@@ -115,7 +115,7 @@ const SalesAcademy = () => {
           element={
             <RadionicaPost 
               radioniceData={radioniceData}
-              basePath="/prodajna-radionica"
+              basePath="/radionica-prodaje"
             />
           } 
         />
@@ -127,4 +127,4 @@ const SalesAcademy = () => {
   );
 };
 
-export default SalesAcademy;
+export default Sales;

@@ -1,63 +1,63 @@
 ///pages/BusinessTransfer.js
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import ServiceMenuBusiness from '../components/ServiceMenuBusiness';
+import ServiceMenuProduct from '../components/ServiceMenuProduct';
 import BlogList from '../components/blog/BlogList';
 import BlogPost from '../components/blog/BlogPost';
-import blogData from '../data/blog/business.json';
+import blogData from '../data/blog/product.json';
 import styles from './ServicePage.module.css';
 
 // KONZISTENTNO SA OSTALIM SERVICE-IMA - VECI FONT
 
-const Zastupanje = () => {
+const MjesecneRadionice = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h1>Zastupanje</h1>
+        <h1>Mjesečne radionice</h1>
         <p className={styles.pageDescription}>
-          Zastupanje u M&A pregovorima i transakcijama.
+          Mjesečne radionice pravljenja proizvoda uživo.
         </p>
       </div>
     </div>
   );
 };
 
-const DealSourcing = () => {
+const Snimljeno = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h1>Deal Sourcing</h1>
+        <h1>Snimljeno</h1>
         <p className={styles.pageDescription}>
-          Pronalaženje i evaluacija investicionih prilika.
+          Snimljeni materijali.
         </p>
       </div>
     </div>
   );
 };
 
-const KontaktBusiness = () => {
+const KontaktProduct = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h1>Kontakt - Prodaja poslovanja</h1>
+        <h1>Kontakt - Radionica proizvoda</h1>
         <p className={styles.pageDescription}>
-          Kontakt informacije specifične za uslugu prodaje poslovanja.
+          Kontakt informacije specifične za radionicu proizvoda.
         </p>
       </div>
     </div>
   );
 };
 
-const Business = () => {
+const Product = () => {
   const location = useLocation();
 
   return (
     <div className={styles.servicePage}>
       <div className={styles.serviceHeader}>
-        <h1 className={styles.serviceTitle}>Prodaja poslovanja</h1>
+        <h1 className={styles.serviceTitle}>Radionica proizvoda</h1>
       </div>
       
-      <ServiceMenuBusiness />
+      <ServiceMenuProduct />
       
       <Routes>
         <Route 
@@ -65,9 +65,9 @@ const Business = () => {
           element={
             <BlogList 
               blogData={blogData}
-              basePath="/business"
-              title="Blog - Prodaja poslovanja"
-              description="Najnovije vijesti, savjeti i analize o prodaji poslovanja."
+              basePath="/product"
+              title="Blog - Radionica proizvoda"
+              description="Najnovije iz radionice proizvoda."
             />
           } 
         />
@@ -77,18 +77,18 @@ const Business = () => {
           element={
             <BlogPost 
               blogData={blogData}
-              basePath="/business"
+              basePath="/product"
             />
           } 
         />
         
         {/* OSTALE RUTE - KONZISTENTNE VELIČINE */}
-        <Route path="zastupanje" element={<Zastupanje />} />
-        <Route path="deal-sourcing" element={<DealSourcing />} />
-        <Route path="kontakt" element={<KontaktBusiness />} />
+        <Route path="mjesecne-radionice" element={<MjesecneRadionice />} />
+        <Route path="snimljeno" element={<Snimljeno />} />
+        <Route path="kontakt" element={<KontaktProduct />} />
       </Routes>
     </div>
   );
 };
 
-export default Business;
+export default Product;
