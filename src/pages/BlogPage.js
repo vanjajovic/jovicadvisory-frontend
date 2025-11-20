@@ -88,8 +88,8 @@ const BlogPost = () => {
         <div className={blogStyles.contentContainer}>
           <h1>Blog post nije pronađen</h1>
           <p>Traženi blog post ne postoji.</p>
-          <Link to="/blog" className={blogStyles.backButton}>
-            ← Nazad na blog
+          <Link to="/blog" className={blogStyles.backButtonBottom}>
+            ← Povratak na blog
           </Link>
         </div>
       </div>
@@ -99,9 +99,7 @@ const BlogPost = () => {
   return (
     <div className={blogStyles.pageContent}>
       <div className={blogStyles.contentContainer}>
-        <Link to="/blog" className={blogStyles.backButton}>
-          ← Nazad na blog
-        </Link>
+        {/* UKLONJENO: Link to="/blog" className={blogStyles.backButton} ← Nazad na blog */}
         
         <article className={blogStyles.blogPost}>
           <header className={blogStyles.blogPostHeader}>
@@ -122,6 +120,13 @@ const BlogPost = () => {
 
           <div className={blogStyles.blogPostContent}>
             <MarkdownRenderer content={blogPost.content} />
+            
+            {/* DUGME NA DNU ČLANKA */}
+            <div style={{ textAlign: 'center', marginTop: '4rem' }}>
+              <Link to="/blog" className={blogStyles.backButtonBottom}>
+                ← Povratak na blog
+              </Link>
+            </div>
           </div>
         </article>
       </div>

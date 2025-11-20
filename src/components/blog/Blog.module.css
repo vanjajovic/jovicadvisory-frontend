@@ -301,3 +301,80 @@
     font-size: 1.2rem;
   }
 }
+
+/* DODAJ OVO U Blog.module.css */
+
+.blogPost {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.blogPostHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.blogPostImage {
+  width: 100%;
+  max-width: 900px; /* Šira slika od teksta za bolji vizuelni utisak */
+  height: 450px;
+  margin: 0 auto 3rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.blogPostImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blogPostContent {
+  width: 100%;
+  max-width: 700px; /* Uži tekst za bolju čitljivost */
+  margin: 0 auto;
+}
+
+/* Dugme na dnu članka */
+.backButtonBottom {
+  display: inline-block;
+  background: #000;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 4rem;
+  transition: all 0.3s ease;
+  border: 2px solid #000;
+}
+
+.backButtonBottom:hover {
+  background: white;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blogPostImage {
+    max-width: 100%;
+    height: 300px;
+  }
+  
+  .blogPostContent {
+    max-width: 100%;
+  }
+  
+  .backButtonBottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 3rem;
+  }
+}
