@@ -8,6 +8,7 @@ import Sales from './pages/Sales';
 import MakeNSell from './pages/MakeNSell';
 import Contact from './pages/Contact';
 import BlogPage from './pages/BlogPage';
+import AdminBlog from './pages/AdminBlog'; // DODAJ OVO
 import './App.css';
 
 function App() {
@@ -22,8 +23,8 @@ function App() {
             <Route path="/radionica-prodaje/*" element={<Sales />} />
             <Route path="/pravljenje-i-prodaja/*" element={<MakeNSell />} />
             <Route path="/kontakt" element={<Contact />} />
-            <Route path="/blog/*" element={<BlogPage />} /> {/* DODATA RUTA */}
-            
+            <Route path="/blog/*" element={<BlogPage />} />
+            <Route path="/adminblog" element={<AdminBlog />} /> {/* DODATA ADMIN RUTA */}
           </Routes>
         </main>
       </div>
