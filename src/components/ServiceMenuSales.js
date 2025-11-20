@@ -7,10 +7,10 @@ const ServiceMenuSales = () => {
   const location = useLocation();
   
   const servicePages = [
-    { name: 'Blog', path: '/radionica-prodaje' },
-    { name: 'Mentorstvo', path: '/radionica-prodaje/mentorstvo' },
+    { name: 'Mentorstvo', path: '/radionica-prodaje' }, // Početna stranica
     { name: 'M&A zastupanje', path: '/radionica-prodaje/m&a' },
-    { name: 'Kontakt', path: '/radionica-prodaje/kontakt' } // DODAJTE OVO
+    { name: 'Kontakt', path: '/radionica-prodaje/kontakt' }
+    // Blog je uklonjen
   ];
 
   return (

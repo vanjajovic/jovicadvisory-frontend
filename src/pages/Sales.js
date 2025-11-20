@@ -1,21 +1,14 @@
-// pages/SalesAcademy.js
+// pages/Sales.js
 import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import ServiceMenuSales from '../components/ServiceMenuSales';
-import BlogList from '../components/blog/BlogList';
-import BlogPost from '../components/blog/BlogPost';
-import RadioniceList from '../components/radionice/RadioniceList';
-import RadionicaPost from '../components/radionice/RadionicaPost';
-import blogData from '../data/blog/sales.json';
-import radioniceData from '../data/radionice/sales.json';
 import styles from './ServicePage.module.css';
 
-// KORISTI BLOG.MODULE.CSS ZA KONZISTENTNOST
+// MENTORSTVO KAO POČETNA STRANICA
 const Mentorstvo = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        {/* KORISTI VECI FONT KAO BLOG */}
         <h1>Mentorstvo</h1>
         <p className={styles.pageDescription}>
           Personalizovani programi mentorstva za unapređenje prodajnih vještina.
@@ -53,7 +46,20 @@ const Mentorstvo = () => {
   );
 };
 
-const KontaktAkademija = () => {
+const MA = () => {
+  return (
+    <div className={styles.pageContent}>
+      <div className={styles.contentContainer}>
+        <h1>M&A zastupanje</h1>
+        <p className={styles.pageDescription}>
+          Zastupanje u procesu prodaje biznisa.
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const KontaktSales = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
@@ -67,8 +73,6 @@ const KontaktAkademija = () => {
 };
 
 const Sales = () => {
-  const location = useLocation();
-
   return (
     <div className={styles.servicePage}>
       <div className={styles.serviceHeader}>
@@ -78,50 +82,12 @@ const Sales = () => {
       <ServiceMenuSales />
       
       <Routes>
-        <Route 
-          index 
-          element={
-            <BlogList 
-              blogData={blogData}
-              basePath="/radionica-prodaje"
-              title="Blog radionice prodaje"
-              description="Pratite najnovije trendove, savjete i strategije iz svijeta prodaje. Naš tim stručnjaka dijeli iskustva koja će vam pomoći da postignete bolje rezultate."
-            />
-          } 
-        />
+        {/* MENTORSTVO KAO POČETNA STRANICA */}
+        <Route index element={<Mentorstvo />} />
         
-        <Route 
-          path="blog/:slug" 
-          element={
-            <BlogPost 
-              blogData={blogData}
-              basePath="/radionica-prodaje"
-            />
-          } 
-        />
-        
-        <Route 
-          path="radionice" 
-          element={
-            <RadioniceList 
-              radioniceData={radioniceData}
-              basePath="/radionica-prodaje"
-            />
-          } 
-        />
-        
-        <Route 
-          path="radionice/:slug" 
-          element={
-            <RadionicaPost 
-              radioniceData={radioniceData}
-              basePath="/radionica-prodaje"
-            />
-          } 
-        />
-        
-        <Route path="mentorstvo" element={<Mentorstvo />} />
-        <Route path="kontakt" element={<KontaktAkademija />} />
+        {/* OSTALE RUTE */}
+        <Route path="m&a" element={<MA />} />
+        <Route path="kontakt" element={<KontaktSales />} />
       </Routes>
     </div>
   );

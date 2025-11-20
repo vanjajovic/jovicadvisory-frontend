@@ -1,16 +1,16 @@
-// components/ServiceMenuBusiness.js
+// components/ServiceMenuMakeNSell.js
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './ServiceMenu.module.css';
 
-const ServiceMenuProduct = () => {
+const ServiceMenuMakeNSell = () => {
   const location = useLocation();
   
   const servicePages = [
-    { name: 'Blog', path: '/radionica-proizvoda' }, // Blog kao početna
-    { name: 'Mjesečno', path: '/radionica-proizvoda/mjesecne-radionice' },
-    { name: 'Snimljeno', path: '/radionica-proizvoda/snimljeno' },
-    { name: 'Kontakt', path: '/radionica-proizvoda/kontakt' }
+    { name: 'Mjesečno', path: '/pravljenje-i-prodaja' }, // Početna stranica
+    { name: 'Snimljeno', path: '/pravljenje-i-prodaja/snimljeno' },
+    { name: 'Kontakt', path: '/pravljenje-i-prodaja/kontakt' }
+    // Blog je uklonjen
   ];
 
   return (
@@ -35,4 +35,4 @@ const ServiceMenuProduct = () => {
   );
 };
 
-export default ServiceMenuProduct;
+export default ServiceMenuMakeNSell;

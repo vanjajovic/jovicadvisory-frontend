@@ -7,9 +7,10 @@ const ServiceMenuHome = () => {
   const location = useLocation();
   
   const servicePages = [
+    { name: 'Blog', path: '/blog' },
     { name: 'Osiguranje', path: '/osiguranje' },
     { name: 'Radionica prodaje', path: '/radionica-prodaje' },
-    { name: 'Pravljenje proizvoda', path: '/radionica-proizvoda' },
+    // { name: 'Radionica pravljenja i prodaje', path: '/pravljenje-i-prodaja' }, // SKRIVENO
     { name: 'Kontakt', path: '/kontakt' }
   ];
 
@@ -19,15 +20,14 @@ const ServiceMenuHome = () => {
         <ul className={styles.serviceMenuList}>
           {servicePages.map((page) => (
             <li key={page.path} className={styles.serviceMenuItem}>
-              {page.path.startsWith('http') ? (
-                <a href={page.path} className={styles.serviceMenuLink}>
-                  {page.name}
-                </a>
-              ) : (
-                <Link to={page.path} className={styles.serviceMenuLink}>
-                  {page.name}
-                </Link>
-              )}
+              <Link 
+                to={page.path}
+                className={`${styles.serviceMenuLink} ${
+                  location.pathname === page.path ? styles.active : ''
+                }`}
+              >
+                {page.name}
+              </Link>
             </li>
           ))}
         </ul>

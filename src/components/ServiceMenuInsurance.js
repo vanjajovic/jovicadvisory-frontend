@@ -7,11 +7,10 @@ const ServiceMenuInsurance = () => {
   const location = useLocation();
   
   const servicePages = [
-    { name: 'Blog', path: '/osiguranje' }, // Ovo će pokriti: /osiguranje, /osiguranje/blog, /osiguranje/blog/neki-post...
+    { name: 'Vitaximmo app', path: '/osiguranje' }, // Početna stranica
     { name: 'Zastupanje u osiguranju', path: 'https://vitaxosiguranje.com/', external: true },
-    { name: 'Podrška', path: '/osiguranje/podrska' },
-    { name: 'Vitaximmo app', path: '/osiguranje/vitaximmo-app' },
     { name: 'Kontakt', path: '/osiguranje/kontakt' }
+    // Podrška uklonjena
   ];
 
   return (
@@ -33,7 +32,6 @@ const ServiceMenuInsurance = () => {
                 <Link 
                   to={page.path}
                   className={`${styles.serviceMenuLink} ${
-                    // PROMJENA OVDJE: startsWith umjesto ===
                     location.pathname.startsWith(page.path) ? styles.active : ''
                   }`}
                 >
