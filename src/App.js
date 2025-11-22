@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Insurance from './pages/Insurance';
-import Sales from './pages/Sales';
+import Venture from './pages/Venture';
 import MakeNSell from './pages/MakeNSell';
 import Contact from './pages/Contact';
 import BlogPage from './pages/BlogPage';
@@ -20,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/osiguranje/*" element={<Insurance />} />
-            <Route path="/radionica-prodaje/*" element={<Sales />} />
+            <Route path="/venture/*" element={<Venture />} />
             <Route path="/pravljenje-i-prodaja/*" element={<MakeNSell />} />
             <Route path="/kontakt" element={<Contact />} />
             <Route path="/blog/*" element={<BlogPage />} />

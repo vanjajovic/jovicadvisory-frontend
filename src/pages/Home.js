@@ -25,10 +25,10 @@ const Home = () => {
             </p>
           </Link>
           
-          <Link to="/radionica-prodaje" className={styles.serviceCard}>
-            <h2 className={styles.serviceCardTitle}>Radionica prodaje</h2>
+          <Link to="/venture" className={styles.serviceCard}>
+            <h2 className={styles.serviceCardTitle}>Venture studio</h2>
             <p className={styles.serviceCardDescription}>
-              Unapređenje prodaje kroz mentorstvo, radionice i M&A zastupanje
+              Razvoj poslovnih performansi
             </p>
           </Link>
           

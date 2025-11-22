@@ -1,16 +1,15 @@
-// components/ServiceMenuSales.js
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './ServiceMenu.module.css';
 
-const ServiceMenuSales = () => {
+const ServiceMenuVenture = () => {
   const location = useLocation();
   
   const servicePages = [
-    { name: 'Mentorstvo', path: '/radionica-prodaje' }, // Početna stranica
-    { name: 'M&A zastupanje', path: '/radionica-prodaje/m&a' },
-    { name: 'Kontakt', path: '/radionica-prodaje/kontakt' }
-    // Blog je uklonjen
+    { name: 'Projekti', path: '/venture/projekti' },
+    { name: 'Mentorstvo', path: '/venture' }, // Početna stranica
+    { name: 'M&A zastupanje', path: '/venture/m&a' },
+    { name: 'Kontakt', path: '/venture/kontakt' }
   ];
 
   return (
@@ -35,4 +34,4 @@ const ServiceMenuSales = () => {
   );
 };
 
-export default ServiceMenuSales;
+export default ServiceMenuVenture;
