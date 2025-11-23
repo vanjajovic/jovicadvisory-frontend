@@ -6,10 +6,10 @@ const ServiceMenuVenture = () => {
   const location = useLocation();
   
   const servicePages = [
-    { name: 'Projekti', path: '/venture/projekti' },
-    { name: 'Mentorstvo', path: '/venture' }, // Početna stranica
-    { name: 'M&A zastupanje', path: '/venture/m&a' },
-    { name: 'Kontakt', path: '/venture/kontakt' }
+    // { name: 'Projekti', path: '/venture/projekti' }, // SKRIVENO DO AKTIVACIJE
+    { name: 'Mentorstvo', path: '/radionica' }, // Početna stranica
+    { name: 'M&A zastupanje', path: '/radionica/m&a' },
+    { name: 'Kontakt', path: '/radionica/kontakt' }
   ];
 
   return (

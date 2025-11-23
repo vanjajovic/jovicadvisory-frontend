@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import ServiceMenuVenture from '../components/ServiceMenuVenture';
 import styles from './ServicePage.module.css';
 
-// PROJEKTI STRANICA
+// PROJEKTI STRANICA - OSTAJE U KODU ALI JE SKRIVENA
 const Projekti = () => {
   return (
     <div className={styles.pageContent}>
@@ -79,9 +79,9 @@ const KontaktVenture = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h1>Kontakt - Venture studio</h1>
+        <h1>Kontakt - Radionica prodaje</h1>
         <p className={styles.pageDescription}>
-          Kontakt informacije za Venture studio.
+          Kontakt informacije za radionicu.
         </p>
       </div>
     </div>
@@ -92,7 +92,7 @@ const Venture = () => {
   return (
     <div className={styles.servicePage}>
       <div className={styles.serviceHeader}>
-        <h1 className={styles.serviceTitle}>Venture Studio</h1>
+        <h1 className={styles.serviceTitle}>Radionica prodaje</h1>
       </div>
       
       <ServiceMenuVenture />
@@ -101,8 +101,8 @@ const Venture = () => {
         {/* MENTORSTVO KAO POČETNA STRANICA */}
         <Route index element={<Mentorstvo />} />
         
-        {/* OSTALE RUTE */}
-        <Route path="projekti" element={<Projekti />} />
+        {/* OSTALE RUTE - PROJEKTI SKRIVENI */}
+        {/* <Route path="projekti" element={<Projekti />} /> */}
         <Route path="m&a" element={<MA />} />
         <Route path="kontakt" element={<KontaktVenture />} />
       </Routes>

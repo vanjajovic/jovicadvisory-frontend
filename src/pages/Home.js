@@ -18,17 +18,17 @@ const Home = () => {
       {/* Services Grid */}
       <div className={styles.pageContent}>
         <div className={styles.serviceGrid}>
-          <Link to="/osiguranje" className={styles.serviceCard}>
+          <Link to="https://vitaxosiguranje.com" className={styles.serviceCard}>
             <h2 className={styles.serviceCardTitle}>Osiguranje</h2>
             <p className={styles.serviceCardDescription}>
-              Zastupanje u osiguranju i softver za upravljanje osiguranjem
+              Zastupanje u osiguranju
             </p>
           </Link>
           
-          <Link to="/venture" className={styles.serviceCard}>
-            <h2 className={styles.serviceCardTitle}>Venture studio</h2>
+          <Link to="/radionica" className={styles.serviceCard}>
+            <h2 className={styles.serviceCardTitle}>Radionica prodaje</h2>
             <p className={styles.serviceCardDescription}>
-              Razvoj poslovnih performansi
+              Prodaja i prodajne performanse
             </p>
           </Link>
           

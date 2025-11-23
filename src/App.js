@@ -20,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/osiguranje/*" element={<Insurance />} />
-            <Route path="/venture/*" element={<Venture />} />
+            <Route path="/radionica/*" element={<Venture />} />
             <Route path="/pravljenje-i-prodaja/*" element={<MakeNSell />} />
             <Route path="/kontakt" element={<Contact />} />
             <Route path="/blog/*" element={<BlogPage />} />
