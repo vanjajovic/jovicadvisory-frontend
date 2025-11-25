@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Insurance from './pages/Insurance';
-import Venture from './pages/Venture';
-import MakeNSell from './pages/MakeNSell';
+import Studio from './pages/Studio';
+import Radionica from './pages/Radionica';
 import Contact from './pages/Contact';
 import BlogPage from './pages/BlogPage';
 import AdminBlog from './pages/AdminBlog'; // DODAJ OVO
@@ -20,8 +20,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/osiguranje/*" element={<Insurance />} />
-            <Route path="/radionica/*" element={<Venture />} />
-            <Route path="/pravljenje-i-prodaja/*" element={<MakeNSell />} />
+            <Route path="/radionica/*" element={<Radionica />} />
+            <Route path="/studio/*" element={<Studio />} />
             <Route path="/kontakt" element={<Contact />} />
             <Route path="/blog/*" element={<BlogPage />} />
             <Route path="/adminblog" element={<AdminBlog />} /> {/* DODATA ADMIN RUTA */}

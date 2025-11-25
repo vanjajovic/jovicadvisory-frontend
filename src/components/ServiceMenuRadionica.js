@@ -1,16 +1,14 @@
-// components/ServiceMenuMakeNSell.js
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './ServiceMenu.module.css';
 
-const ServiceMenuMakeNSell = () => {
+const ServiceMenuRadionica = () => {
   const location = useLocation();
   
   const servicePages = [
-    { name: 'Mjesečno', path: '/pravljenje-i-prodaja' }, // Početna stranica
-    { name: 'Snimljeno', path: '/pravljenje-i-prodaja/snimljeno' },
-    { name: 'Kontakt', path: '/pravljenje-i-prodaja/kontakt' }
-    // Blog je uklonjen
+    // { name: 'Projekti', path: '/venture/projekti' }, // SKRIVENO DO AKTIVACIJE
+    { name: 'Mentorstvo', path: '/radionica' }, // Početna stranica
+    { name: 'M&A zastupanje', path: '/radionica/m&a' },
   ];
 
   return (
@@ -35,4 +33,4 @@ const ServiceMenuMakeNSell = () => {
   );
 };
 
-export default ServiceMenuMakeNSell;
+export default ServiceMenuRadionica;

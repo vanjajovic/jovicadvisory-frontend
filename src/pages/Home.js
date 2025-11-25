@@ -26,25 +26,24 @@ const Home = () => {
           </Link>
           
           <Link to="/radionica" className={styles.serviceCard}>
-            <h2 className={styles.serviceCardTitle}>Radionica prodaje</h2>
+            <h2 className={styles.serviceCardTitle}>Radionica prodajnih sistema</h2>
             <p className={styles.serviceCardDescription}>
-              Prodaja i prodajne performanse
+              Pravljenje i implementacija prodajnih sistema
             </p>
           </Link>
           
           {/* SKRIVENO DO AKTIVACIJE - OSTAJE U KODU ALI SE NE VIDI */}
           {false && (
-            <Link to="/pravljenje-i-prodaja" className={styles.serviceCard}>
-              <h2 className={styles.serviceCardTitle}>Radionica pravljenja i prodaje</h2>
+            <Link to="/studio" className={styles.serviceCard}>
+              <h2 className={styles.serviceCardTitle}>Venture studio</h2>
               <p className={styles.serviceCardDescription}>
-                Radionica pravljenja i prodaje.
+                Pravljenje i prodaja biznisa.
               </p>
             </Link>
           )}
         </div>
       </div>
 
-      {/* BLOG SEKCIJA JE POTPUNO UKLONJENA SA HOME STRANICE */}
     </div>
   );
 };
