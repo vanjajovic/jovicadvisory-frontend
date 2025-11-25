@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Insurance from './pages/Insurance';
-import Studio from './pages/Studio';
+import Merge from './pages/Merge';
 import Radionica from './pages/Radionica';
 import Contact from './pages/Contact';
 import BlogPage from './pages/BlogPage';
@@ -21,7 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/osiguranje/*" element={<Insurance />} />
             <Route path="/radionica/*" element={<Radionica />} />
-            <Route path="/studio/*" element={<Studio />} />
+            <Route path="/ma/*" element={<Merge />} />
             <Route path="/kontakt" element={<Contact />} />
             <Route path="/blog/*" element={<BlogPage />} />
             <Route path="/adminblog" element={<AdminBlog />} /> {/* DODATA ADMIN RUTA */}

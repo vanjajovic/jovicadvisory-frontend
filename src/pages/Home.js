@@ -32,15 +32,12 @@ const Home = () => {
             </p>
           </Link>
           
-          {/* SKRIVENO DO AKTIVACIJE - OSTAJE U KODU ALI SE NE VIDI */}
-          {false && (
-            <Link to="/studio" className={styles.serviceCard}>
-              <h2 className={styles.serviceCardTitle}>Venture studio</h2>
+            <Link to="/ma" className={styles.serviceCard}>
+              <h2 className={styles.serviceCardTitle}>M&A</h2>
               <p className={styles.serviceCardDescription}>
-                Pravljenje i prodaja biznisa.
+                Podrška prodaji kompanija i pronalasku investicionih prilika
               </p>
             </Link>
-          )}
         </div>
       </div>
 

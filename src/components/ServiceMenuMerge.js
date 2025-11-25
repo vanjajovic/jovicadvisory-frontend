@@ -3,12 +3,12 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './ServiceMenu.module.css';
 
-const ServiceMenuStudio = () => {
+const ServiceMenuMerge = () => {
   const location = useLocation();
   
   const servicePages = [
-    { name: 'Projekti u razvoju', path: '/studio' }, // Početna stranica
-    { name: 'Završeni projekti', path: '/studio/zavrseno' },
+    { name: 'Prodaja kompanije', path: '/ma' }, // Početna stranica
+    { name: 'Deal Sourcing', path: '/ma/dealsourcing' },
   ];
 
   return (
@@ -33,4 +33,4 @@ const ServiceMenuStudio = () => {
   );
 };
 
-export default ServiceMenuStudio;
+export default ServiceMenuMerge;

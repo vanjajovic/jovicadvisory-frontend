@@ -1,54 +1,53 @@
-// pages/Studio.js
+// pages/Merge.js
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'; // Uklonjen useLocation
-import ServiceMenuStudio from '../components/ServiceMenuStudio';
+import ServiceMenuMerge from '../components/ServiceMenuMerge';
 import styles from './ServicePage.module.css';
 
 // MJESEČNE RADIONICE KAO POČETNA STRANICA
-const Razvoj = () => {
+const MA = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h1>Projekti u razvoju</h1>
+        <h1>Prodaja kompanije</h1>
         <p className={styles.pageDescription}>
-          Lista projekata u razvoju
+          Podrška u procesu prodaja kompanije
         </p>
       </div>
     </div>
   );
 };
 
-const Zavrseno = () => {
+const DealSourcing = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h1>Završeni projekti</h1>
+        <h1>Deal sourcing</h1>
         <p className={styles.pageDescription}>
-          Lista završenih projekata
+          Podrška u pronalasku investicionih prilika
         </p>
       </div>
     </div>
   );
 };
 
-const Studio = () => {
-  // Uklonjen: const location = useLocation();
+const Merge = () => {
 
   return (
     <div className={styles.servicePage}>
       <div className={styles.serviceHeader}>
-        <h1 className={styles.serviceTitle}>Venture studio</h1>
+        <h1 className={styles.serviceTitle}>M&A</h1>
       </div>
       
-      <ServiceMenuStudio />
+      <ServiceMenuMerge />
       
       <Routes>
         {/* MJESEČNE RADIONICE KAO POČETNA STRANICA */}
-        <Route index element={<Razvoj />} />
-        <Route path="zavrseno" element={<Zavrseno />} />
+        <Route index element={<MA />} />
+        <Route path="dealsourcing" element={<DealSourcing />} />
       </Routes>
     </div>
   );
 };
 
-export default Studio;
+export default Merge;

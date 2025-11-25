@@ -33,13 +33,26 @@ const Mentorstvo = () => {
   );
 };
 
-const MA = () => {
+const Aktivno = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h1>M&A zastupanje</h1>
+        <h1>Projekti u toku</h1>
         <p className={styles.pageDescription}>
-          Zastupanje u procesu prodaje biznisa
+          Aktivni projekti
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const Zavrseno = () => {
+  return (
+    <div className={styles.pageContent}>
+      <div className={styles.contentContainer}>
+        <h1>Završeni projekti</h1>
+        <p className={styles.pageDescription}>
+          Završeni projekti
         </p>
       </div>
     </div>
@@ -58,7 +71,8 @@ const Radionica = () => {
       <Routes>
         {/* MENTORSTVO KAO POČETNA STRANICA */}
         <Route index element={<Mentorstvo />} />
-        <Route path="m&a" element={<MA />} />
+        <Route path="aktivno" element={<Aktivno />} />
+        <Route path="zavrseno" element={<Zavrseno />} />
       </Routes>
     </div>
   );

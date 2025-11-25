@@ -7,7 +7,8 @@ const ServiceMenuRadionica = () => {
   
   const servicePages = [
     { name: 'Mentorstvo', path: '/radionica' }, // Početna stranica
-    { name: 'M&A zastupanje', path: '/radionica/m&a' },
+   //  { name: 'Projekti u toku', path: '/radionica/aktivno' },
+   //  { name: 'Završeni projekti', path: '/radionica/zavrseno' },
   ];
 
   return (
