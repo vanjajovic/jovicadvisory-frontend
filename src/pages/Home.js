@@ -26,9 +26,9 @@ const Home = () => {
           </Link>
           
           <Link to="/radionica" className={styles.serviceCard}>
-            <h2 className={styles.serviceCardTitle}>Radionica prodajnih sistema</h2>
+            <h2 className={styles.serviceCardTitle}>Radionica prodaje</h2>
             <p className={styles.serviceCardDescription}>
-              Pravljenje i implementacija prodajnih sistema
+              Pravljenje prodajnih sistema i razvoj prodaje
             </p>
           </Link>
           

@@ -11,12 +11,12 @@ const Mentorstvo = () => {
       <div className={styles.contentContainer}>
         <h1>Mentorstvo</h1>
         <p className={styles.pageDescription}>
-          Program mentorstva za unapređenje prodaje
+          Mentorstvo na izgradnji prodajnih sistema
         </p>
         
         <div className={styles.mentorstvoGrid}>
           <div className={styles.mentorstvoCard}>
-            <h2>Sadržaj programa</h2>
+            <h2>Sadržaj</h2>
             <div className={styles.mentorstvoPrednosti}>
               <ul>
                 <li>Personalizovani rad</li>
@@ -39,7 +39,7 @@ const MA = () => {
       <div className={styles.contentContainer}>
         <h1>M&A zastupanje</h1>
         <p className={styles.pageDescription}>
-          Zastupanje u procesu prodaje biznisa.
+          Zastupanje u procesu prodaje biznisa
         </p>
       </div>
     </div>
@@ -50,7 +50,7 @@ const Radionica = () => {
   return (
     <div className={styles.servicePage}>
       <div className={styles.serviceHeader}>
-        <h1 className={styles.serviceTitle}>Radionica prodajnih sistema</h1>
+        <h1 className={styles.serviceTitle}>Radionica prodaje</h1>
       </div>
       
       <ServiceMenuRadionica />

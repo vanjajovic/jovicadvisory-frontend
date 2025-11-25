@@ -9,7 +9,7 @@ const ServiceMenuHome = () => {
   const servicePages = [
     { name: 'Blog', path: '/blog' },
     { name: 'Osiguranje', path: 'https://vitaxosiguranje.com' },
-    { name: 'Radionica prodajnih sistema', path: '/radionica' },
+    { name: 'Radionica prodaje', path: '/radionica' },
     // { name: 'Venture studio', path: '/studio' }, // SKRIVENO
     { name: 'Kontakt', path: '/kontakt' }
   ];
