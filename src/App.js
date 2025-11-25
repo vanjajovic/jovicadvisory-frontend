@@ -11,6 +11,7 @@ import BlogPage from './pages/BlogPage';
 import AdminBlog from './pages/AdminBlog'; // DODAJ OVO
 import './App.css';
 
+
 function App() {
   return (
     <Router>
@@ -22,9 +23,9 @@ function App() {
             <Route path="/osiguranje/*" element={<Insurance />} />
             <Route path="/radionica/*" element={<Radionica />} />
             <Route path="/ma/*" element={<Merge />} />
-            <Route path="/kontakt" element={<Contact />} />
+            <Route path="/kontakt/*" element={<Contact />} />
             <Route path="/blog/*" element={<BlogPage />} />
-            <Route path="/adminblog" element={<AdminBlog />} /> {/* DODATA ADMIN RUTA */}
+            <Route path="/adminblog" element={<AdminBlog />} />
           </Routes>
         </main>
       </div>

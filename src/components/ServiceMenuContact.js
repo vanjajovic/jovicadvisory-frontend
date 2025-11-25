@@ -1,4 +1,3 @@
-// components/ServiceMenuContact.js
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './ServiceMenu.module.css';
@@ -7,6 +6,8 @@ const ServiceMenuContact = () => {
   const location = useLocation();
   
   const servicePages = [
+    { name: 'Kontakt informacije', path: '/kontakt' },
+    { name: 'Zakaži konsultacije', path: '/kontakt/konsultacije' }
   ];
 
   return (
