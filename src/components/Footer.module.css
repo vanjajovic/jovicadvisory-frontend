@@ -1,0 +1,38 @@
+/* components/Footer.module.css */
+.footer {
+  background-color: white;
+  border-top: 1px solid #e0e0e0;
+  padding: 1.5rem 0;
+  margin-top: auto;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footerContent {
+  text-align: center;
+}
+
+.footerText {
+  color: #000;
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Za dosljednost sa headerom */
+@media (max-width: 768px) {
+  .footerContainer {
+    padding: 0 1rem;
+  }
+  
+  .footerText {
+    font-size: 0.9rem;
+  }
+}
