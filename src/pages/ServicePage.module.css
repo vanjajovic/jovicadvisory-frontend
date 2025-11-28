@@ -456,8 +456,10 @@
 .mentorstvoPrednosti li {
   padding: 0.5rem 0;
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1.8rem;
   text-align: center;
+  display: flex;
+  align-items: flex-start;
 }
 
 .mentorstvoPrednosti li::before {
@@ -466,4 +468,5 @@
   left: 0;
   color: #000;
   font-weight: bold;
+  top: 0.5rem;
 }
