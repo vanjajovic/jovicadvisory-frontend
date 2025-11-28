@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import ServiceMenuKonsultacije from '../components/ServiceMenuKonsultacije';
 import styles from './ServicePage.module.css';
 
-// Dodaj EmailJS
-import emailjs from 'emailjs-com';
-
 const Konsultacije = () => {
   const [formData, setFormData] = useState({
     ime: '',
@@ -33,17 +30,17 @@ const Konsultacije = () => {
     osiguranje: {
       serviceTitle: 'Konsultacije',
       formTitle: 'Zakažite konsultacije',
-      templateId: 'template_wiovzql' // Dodaj kasnije za osiguranje
+      formspreeEndpoint: 'https://formspree.io/f/xqavgerg'
     },
     mentorstvo: {
       serviceTitle: 'Konsultacije',
       formTitle: 'Zakažite konsultacije',
-      templateId: 'template_769v9bh'
+      formspreeEndpoint: 'https://formspree.io/f/manglqrp'
     },
     ma: {
       serviceTitle: 'Konsultacije',
       formTitle: 'Zakažite konsultacije',
-      templateId: 'template_wiovzql'
+      formspreeEndpoint: 'https://formspree.io/f/xqavgerg'
     }
   };
 
@@ -52,29 +49,30 @@ const Konsultacije = () => {
     setIsSubmitting(true);
 
     try {
-      // EmailJS podaci
-      const serviceId = 'service_ol8y2lm';
-      const templateId = usluge[trenutnaUsluga]?.templateId || 'template_wiovzql';
-      const publicKey = 'UejGRX_Xnc55QIKVQ';
-
-      // Podaci za email
-      const templateParams = {
-        ime: formData.ime,
-        email: formData.email,
-        telefon: formData.telefon,
-        poruka: formData.poruka,
-        usluga: trenutnaUsluga
-      };
-
-      // Pošalji email
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      const usluga = usluge[trenutnaUsluga] || usluge.osiguranje;
       
+      const formDataToSend = new FormData();
+      formDataToSend.append('ime', formData.ime);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('telefon', formData.telefon);
+      formDataToSend.append('poruka', formData.poruka);
+      formDataToSend.append('usluga', trenutnaUsluga);
+      formDataToSend.append('_subject', `Konsultacije za ${trenutnaUsluga} - ${formData.ime}`);
+
+      await fetch(usluga.formspreeEndpoint, {
+        method: 'POST',
+        body: formDataToSend,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
       // Simuliraj delay za bolji UX
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       setIsSubmitted(true);
     } catch (error) {
-      console.error('Email error:', error);
+      console.error('Error:', error);
       alert('Došlo je do greške pri slanju poruke. Pokušajte ponovo.');
     } finally {
       setIsSubmitting(false);
@@ -138,6 +136,7 @@ const Konsultacije = () => {
                   onChange={handleChange}
                   placeholder="Ime i prezime"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               
@@ -149,6 +148,7 @@ const Konsultacije = () => {
                   onChange={handleChange}
                   placeholder="Email"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -160,6 +160,7 @@ const Konsultacije = () => {
                   onChange={handleChange}
                   placeholder="Broj telefona"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               
@@ -170,6 +171,7 @@ const Konsultacije = () => {
                   value={formData.poruka}
                   onChange={handleChange}
                   placeholder="Opišite ukratko vašu situaciju..."
+                  disabled={isSubmitting}
                 />
               </div>
               
