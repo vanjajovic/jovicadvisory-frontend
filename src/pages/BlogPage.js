@@ -28,7 +28,7 @@ const BlogList = () => {
       <div className={blogStyles.contentContainer}>
         <h1>Blog</h1>
         <p className={blogStyles.pageDescription}>
-          Tekstovi u vezi osiguranja, prodaje i razvoja poslovanja.
+          Tekstovi u vezi osiguranja, prodaje i M&A.
         </p>
         
         <div className={blogStyles.blogGrid}>
