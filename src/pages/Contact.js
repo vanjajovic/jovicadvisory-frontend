@@ -10,7 +10,6 @@ const Kontakt = () => {
     poruka: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -19,38 +18,36 @@ const Kontakt = () => {
     });
   };
 
+  // Pravimo hidden form za FormSubmit
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      // FormSubmit će se sam pobrinuti za slanje emaila
-      // Ovdje samo simuliramo delay za bolji UX
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setIsSubmitted(true);
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Došlo je do greške. Pokušajte ponovo.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    // Kreiraj hidden form i submitaj ga
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'https://formsubmit.co/vanja.jovic@vitaxosiguranje.com';
+    
+    // Dodaj podatke
+    const addField = (name, value) => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = name;
+      input.value = value;
+      form.appendChild(input);
+    };
 
-  if (isSubmitted) {
-    return (
-      <div className={styles.pageContent}>
-        <div className={styles.contentContainer}>
-          <div style={{ textAlign: 'center', maxWidth: '500px', margin: '0 auto' }}>
-            <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Hvala vam</h1>
-            <p className={styles.pageDescription}>
-              Vaša poruka je uspješno poslana. Javljamo se uskoro.
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  }
+    addField('_subject', 'Nova poruka sa sajta - Kontakt');
+    addField('_template', 'table');
+    addField('_captcha', 'false');
+    addField('ime', formData.ime);
+    addField('email', formData.email);
+    addField('poruka', formData.poruka);
+
+    // Submit form
+    document.body.appendChild(form);
+    form.submit();
+  };
 
   return (
     <div className={styles.pageContent}>
@@ -68,19 +65,7 @@ const Kontakt = () => {
 
           <h1 className={styles.formTitle}>Pošaljite poruku</h1>
           
-          {/* FORMSUBMIT IMPLEMENTACIJA */}
-          <form 
-            action="https://formsubmit.co/vanja_jovic@outlook.com" 
-            method="POST"
-            onSubmit={handleSubmit}
-            className={styles.contactForm}
-          >
-            {/* Hidden inputs za FormSubmit konfiguraciju */}
-            <input type="hidden" name="_subject" value="Nova poruka sa sajta - Kontakt" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value={window.location.origin + "/kontakt?success=true"} />
-            
+          <form onSubmit={handleSubmit} className={styles.contactForm}>
             <div className={styles.formGroup}>
               <input
                 type="text"
