@@ -5,13 +5,26 @@ import ServiceMenuInsurance from '../components/ServiceMenuInsurance';
 import styles from './ServicePage.module.css';
 
 // VITAXIMMO KAO POČETNA STRANICA
-const VitaximmoAppOsiguranje = () => {
+const Dom = () => {
   return (
     <div className={styles.pageContent}>
       <div className={styles.contentContainer}>
-        <h1>Vitaximmo app za osiguranje</h1>
+        <h1>Osiguranje doma</h1>
         <p className={styles.pageDescription}>
-          Softver za upravljanje osiguranjem.
+          Program za osiguranje ličnih nekretnina
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const Posao = () => {
+  return (
+    <div className={styles.pageContent}>
+      <div className={styles.contentContainer}>
+        <h1>Osiguranje posla</h1>
+        <p className={styles.pageDescription}>
+          Program za osiguranje poslovnih nekretnina
         </p>
       </div>
     </div>
@@ -32,23 +45,20 @@ const KontaktOsiguranje = () => {
 };
 
 const Insurance = () => {
-  // Uklonjen: const location = useLocation();
 
   return (
     <div className={styles.servicePage}>
       <div className={styles.serviceHeader}>
         <div className={styles.serviceLogo}>
         </div>
-        <h1 className={styles.serviceTitle}>Osiguranje</h1>
+        <h1 className={styles.serviceTitle}>Zastupanje u osiguranju</h1>
       </div>
       
       <ServiceMenuInsurance />
       
       <Routes>
-        {/* VITAXIMMO KAO POČETNA STRANICA */}
-        <Route index element={<VitaximmoAppOsiguranje />} />
-        
-        {/* OSTALE RUTE */}
+        <Route index element={<Dom />} /> {/* POČETNA STRANICA */}
+        <Route path="posao" element={<Posao />} />
         <Route path="kontakt" element={<KontaktOsiguranje />} />
       </Routes>
     </div>

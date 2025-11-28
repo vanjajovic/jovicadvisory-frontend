@@ -19,9 +19,9 @@ const Home = () => {
       <div className={styles.pageContent}>
         <div className={styles.serviceGrid}>
           <Link to="https://vitaxosiguranje.com" className={styles.serviceCard}>
-            <h2 className={styles.serviceCardTitle}>Osiguranje</h2>
+            <h2 className={styles.serviceCardTitle}>Zastupanje u osiguranju</h2>
             <p className={styles.serviceCardDescription}>
-              Zastupanje u osiguranju
+              Planovi osiguranja, ugovaranje osiguranja i pomoć kod naplate štete
             </p>
           </Link>
           

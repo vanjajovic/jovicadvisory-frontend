@@ -7,10 +7,10 @@ const ServiceMenuInsurance = () => {
   const location = useLocation();
   
   const servicePages = [
-    { name: 'Vitaximmo app', path: '/osiguranje' }, // Početna stranica
-    { name: 'Zastupanje u osiguranju', path: 'https://vitaxosiguranje.com/', external: true },
+    { name: 'Osiguranje doma', path: '/osiguranje' }, // Početna stranica
+    { name: 'Osiguranje poslovanja', path: '/osiguranje/posao' },
+    { name: 'Vitax zastupanje u osiguranju', path: 'https://vitaxosiguranje.com/', external: true },
     { name: 'Kontakt', path: '/osiguranje/kontakt' }
-    // Podrška uklonjena
   ];
 
   return (

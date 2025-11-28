@@ -15,10 +15,13 @@ body {
 
 .app {
   min-height: 100vh;
+  display: flex;          /* DODAJ OVO */
+  flex-direction: column; /* DODAJ OVO */
 }
 
 .main-content {
   padding-top: var(--header-height, 60px); /* Desktop */
+  flex: 1;                /* DODAJ OVO - ovo gura footer na dno */
 }
 
 /* Global link styles */

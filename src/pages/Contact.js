@@ -79,7 +79,7 @@ const KontaktInformacije = () => {
   );
 };
 
-// KONSULTACIJE KOMPONENTA - SAMOSTALNA
+// KONSULTACIJE KOMPONENTA - SAMOSTALNA (AŽURIRANA)
 const Konsultacije = () => {
   const [formData, setFormData] = useState({
     ime: '',
@@ -89,6 +89,11 @@ const Konsultacije = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // SCROLL TO TOP
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // JEDNOSTAVNA DETEKCIJA - koristimo window.location
   const getUsluga = () => {
@@ -101,34 +106,13 @@ const Konsultacije = () => {
 
   const usluge = {
     osiguranje: {
-      naziv: 'Osiguranje',
-      opis: 'Konsultacije za osiguranje, polise i Vitaximmo aplikaciju.',
-      prednosti: [
-        'Analiza postojećih polisa',
-        'Preporuka optimalnog pokrića', 
-        'Demo Vitaximmo aplikacije',
-        'Odgovori na sva pitanja'
-      ]
+      naziv: 'Konsultacije za osiguranje'
     },
     mentorstvo: {
-      naziv: 'Mentorstvo',
-      opis: 'Programi mentorstva za unapređenje prodajnih vještina.',
-      prednosti: [
-        'Analiza prodajnih procesa',
-        'Strategije za povećanje konverzije',
-        'Personalizovani plan razvoja',
-        'Praćenje napretka'
-      ]
+      naziv: 'Konsultacije za Mentorstvo na izgradnji prodajnih sistema'
     },
     ma: {
-      naziv: 'M&A Zastupanje', 
-      opis: 'Stručno zastupanje u procesu prodaje biznisa.',
-      prednosti: [
-        'Procjena vrijednosti biznisa',
-        'Priprema za prodaju',
-        'Povezivanje sa kupcima',
-        'Pravno i finansijsko savjetovanje'
-      ]
+      naziv: 'Konsultacije za M&A zastupanje'
     }
   };
 
@@ -168,156 +152,66 @@ const Konsultacije = () => {
   const usluga = usluge[trenutnaUsluga] || usluge.osiguranje;
 
   return (
-    <div>
-      <h1>{usluga.naziv}</h1>
-      <p className={styles.pageDescription}>
-        {usluga.opis}
-      </p>
-      
-      <div style={{ 
-        display: 'grid', 
-        gridTemplateColumns: '1fr 1fr', 
-        gap: '3rem',
-        maxWidth: '1000px',
-        margin: '0 auto',
-        textAlign: 'left'
-      }}>
-        
-        {/* LEVO - INFORMACIJE */}
-        <div>
-          <h2 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Šta nudimo:</h2>
-          <ul style={{ listStyle: 'none', padding: 0 }}>
-            {usluga.prednosti.map((prednost, index) => (
-              <li key={index} style={{ 
-                padding: '0.5rem 0', 
-                position: 'relative', 
-                paddingLeft: '1.5rem',
-                color: '#666'
-              }}>
-                <span style={{ 
-                  position: 'absolute', 
-                  left: 0, 
-                  color: '#000', 
-                  fontWeight: 'bold' 
-                }}>✓</span>
-                {prednost}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* DESNO - FORMA */}
-        <div>
-          <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: '0 auto' }}>
-            <div style={{ marginBottom: '1rem' }}>
-              <label style={{ 
-                display: 'block', 
-                marginBottom: '0.5rem', 
-                fontWeight: '600' 
-              }}>Ime i prezime</label>
-              <input
-                type="text"
-                name="ime"
-                value={formData.ime}
-                onChange={handleChange}
-                required
-                style={{
-                  width: '100%',
-                  padding: '0.8rem',
-                  border: '1px solid #000',
-                  borderRadius: 0,
-                  fontSize: '1rem'
-                }}
-              />
-            </div>
-
-            <div style={{ marginBottom: '1rem' }}>
-              <label style={{ 
-                display: 'block', 
-                marginBottom: '0.5rem', 
-                fontWeight: '600' 
-              }}>Email adresa</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                style={{
-                  width: '100%',
-                  padding: '0.8rem',
-                  border: '1px solid #000',
-                  borderRadius: 0,
-                  fontSize: '1rem'
-                }}
-              />
-            </div>
-
-            <div style={{ marginBottom: '1rem' }}>
-              <label style={{ 
-                display: 'block', 
-                marginBottom: '0.5rem', 
-                fontWeight: '600' 
-              }}>Broj telefona</label>
-              <input
-                type="tel"
-                name="telefon"
-                value={formData.telefon}
-                onChange={handleChange}
-                required
-                style={{
-                  width: '100%',
-                  padding: '0.8rem',
-                  border: '1px solid #000',
-                  borderRadius: 0,
-                  fontSize: '1rem'
-                }}
-                placeholder="+387 61 123 456"
-              />
-            </div>
-
-            <div style={{ marginBottom: '1.5rem' }}>
-              <label style={{ 
-                display: 'block', 
-                marginBottom: '0.5rem', 
-                fontWeight: '600' 
-              }}>Poruka (opciono)</label>
-              <textarea
-                name="poruka"
-                value={formData.poruka}
-                onChange={handleChange}
-                style={{
-                  width: '100%',
-                  padding: '0.8rem',
-                  border: '1px solid #000',
-                  borderRadius: 0,
-                  fontSize: '1rem',
-                  minHeight: '100px',
-                  resize: 'vertical'
-                }}
-                placeholder="Opišite ukratko vašu situaciju..."
-              />
-            </div>
-
-            <button 
-              type="submit" 
-              disabled={isSubmitting}
-              style={{
-                width: '100%',
-                background: '#000',
-                color: 'white',
-                border: 'none',
-                padding: '1rem 2rem',
-                fontSize: '1rem',
-                cursor: 'pointer',
-                fontWeight: '500'
-              }}
-            >
-              {isSubmitting ? 'Šaljem...' : 'Pošalji upit'}
-            </button>
-          </form>
-        </div>
+    <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+      {/* INFORMACIJE O USLUZI - KAO KONTAKT INFORMACIJE */}
+      <div className={styles.contactInfo}>
+        <h1 className={styles.contactCompany}>{usluga.naziv}</h1>
+        <p className={styles.pageDescription}>
+          {usluga.opis}
+        </p>
       </div>
+
+      {/* FORMA - IDENTIČNA KONTAKT FORMI */}
+      <h1 className={styles.formTitle}>{usluga.formTitle}</h1>
+      
+      <form onSubmit={handleSubmit} className={styles.contactForm}>
+        <div className={styles.formGroup}>
+          <input
+            type="text"
+            name="ime"
+            value={formData.ime}
+            onChange={handleChange}
+            placeholder="Ime i prezime"
+            required
+          />
+        </div>
+        
+        <div className={styles.formGroup}>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email"
+            required
+          />
+        </div>
+
+        <div className={styles.formGroup}>
+          <input
+            type="tel"
+            name="telefon"
+            value={formData.telefon}
+            onChange={handleChange}
+            placeholder="Broj telefona"
+            required
+          />
+        </div>
+        
+        <div className={styles.formGroup}>
+          <textarea
+            name="poruka"
+            rows="4"
+            value={formData.poruka}
+            onChange={handleChange}
+            placeholder="Opišite ukratko vašu situaciju..."
+          />
+        </div>
+        
+        <button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? 'Šaljem...' : 'Pošalji upit'}
+        </button>
+      </form>
     </div>
   );
 };

@@ -7,8 +7,8 @@ const ServiceMenuMerge = () => {
   const location = useLocation();
   
   const servicePages = [
-    { name: 'Prodaja kompanije', path: '/ma' }, // Početna stranica
-    { name: 'Deal Sourcing', path: '/ma/dealsourcing' },
+    { name: 'Prodaja', path: '/ma' }, // Početna stranica
+    { name: 'Kupovina', path: '/ma/dealsourcing' },
   ];
 
   return (

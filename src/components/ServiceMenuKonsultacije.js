@@ -1,17 +1,26 @@
-// components/ServiceMenuHome.js
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'; // DODAJ LINK
 import styles from './ServiceMenu.module.css';
 
-const ServiceMenuHome = () => {
+const ServiceMenuKonsultacije = () => {
   const location = useLocation();
   
+  // Dinamički naslov baziran na URL parametru
+  const getNazivUsluge = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const usluga = urlParams.get('usluga');
+    
+    const usluge = {
+      osiguranje: 'Konsultacije za osiguranje',
+      mentorstvo: 'Konsultacije za mentorstvo', 
+      ma: 'Konsultacije za M&A'
+    };
+    
+    return usluge[usluga] || 'Konsultacije';
+  };
+
   const servicePages = [
-    { name: 'Blog', path: '/blog' },
-    { name: 'Zastupanje u osiguranju', path: "https://vitaxosiguranje.com/" },
-    { name: 'Radionica prodaje', path: '/radionica' },
-    { name: 'M&A', path: '/ma' },
-    { name: 'Kontakt', path: '/kontakt' }
+    { name: getNazivUsluge(), path: '/konsultacije' }
   ];
 
   return (
@@ -36,4 +45,4 @@ const ServiceMenuHome = () => {
   );
 };
 
-export default ServiceMenuHome;
+export default ServiceMenuKonsultacije;

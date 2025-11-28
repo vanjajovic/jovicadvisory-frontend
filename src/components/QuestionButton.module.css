@@ -1,0 +1,39 @@
+/* QuestionButton.module.css */
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.questionButton {
+  background: #000;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 500px;
+  font-family: inherit;
+}
+
+.questionButton:hover {
+  background: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .buttonContainer {
+    margin-top: 2rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  .questionButton {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
