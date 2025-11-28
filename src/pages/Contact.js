@@ -10,6 +10,7 @@ const Kontakt = () => {
     poruka: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -18,36 +19,51 @@ const Kontakt = () => {
     });
   };
 
-  // Pravimo hidden form za FormSubmit
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Kreiraj hidden form i submitaj ga
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action = 'https://formsubmit.co/vanja.jovic@vitaxosiguranje.com';
-    
-    // Dodaj podatke
-    const addField = (name, value) => {
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = name;
-      input.value = value;
-      form.appendChild(input);
-    };
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append('ime', formData.ime);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('poruka', formData.poruka);
+      formDataToSend.append('_subject', 'Nova poruka sa sajta - Kontakt');
 
-    addField('_subject', 'Nova poruka sa sajta - Kontakt');
-    addField('_template', 'table');
-    addField('_captcha', 'false');
-    addField('ime', formData.ime);
-    addField('email', formData.email);
-    addField('poruka', formData.poruka);
+      await fetch('https://formspree.io/f/xqavgavr', {
+        method: 'POST',
+        body: formDataToSend,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
 
-    // Submit form
-    document.body.appendChild(form);
-    form.submit();
+      // Simuliraj delay za bolji UX
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Došlo je do greške. Pokušajte ponovo.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+  if (isSubmitted) {
+    return (
+      <div className={styles.pageContent}>
+        <div className={styles.contentContainer}>
+          <div style={{ textAlign: 'center', maxWidth: '500px', margin: '0 auto' }}>
+            <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Hvala vam</h1>
+            <p className={styles.pageDescription}>
+              Vaša poruka je uspješno poslana. Javljamo se uskoro.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.pageContent}>
