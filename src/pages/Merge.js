@@ -55,8 +55,7 @@ const DealSourcing = () => {
                 <li>Analiza investicijskih prilika</li>
                 <li>Due diligence proces</li>
                 <li>Pregovaranje o kupovini</li>
-                <li>Strukturiranje transakcije</li>
-                <li>Integracija poslovanja nakon kupovine</li>
+                <li>Podrška tokom cijelog procesa</li>
               </ul>
             </div>
             <QuestionButton 

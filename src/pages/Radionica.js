@@ -11,7 +11,7 @@ const Mentorstvo = () => {
       <div className={styles.contentContainer}>
         <h1>Mentorstvo</h1>
         <p className={styles.pageDescription}>
-          Mentorstvo na izgradnji prodajnih sistema
+          Mentorstvo na gradnji prodajnih sistema
         </p>
         
         <div className={styles.mentorstvoGrid}>

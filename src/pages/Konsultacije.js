@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import ServiceMenuKonsultacije from '../components/ServiceMenuKonsultacije';
 import styles from './ServicePage.module.css';
 
+// Dodaj EmailJS
+import emailjs from 'emailjs-com';
+
 const Konsultacije = () => {
   const [formData, setFormData] = useState({
     ime: '',
@@ -29,15 +32,18 @@ const Konsultacije = () => {
   const usluge = {
     osiguranje: {
       serviceTitle: 'Konsultacije',
-      formTitle: 'Zakažite konsultacije za osiguranje'
+      formTitle: 'Zakažite konsultacije',
+      templateId: 'template_wiovzql' // Dodaj kasnije za osiguranje
     },
     mentorstvo: {
       serviceTitle: 'Konsultacije',
-      formTitle: 'Zakažite konsultacije za mentorstvo'
+      formTitle: 'Zakažite konsultacije',
+      templateId: 'template_769v9bh'
     },
     ma: {
       serviceTitle: 'Konsultacije',
-      formTitle: 'Zakažite konsultacije za M&A'
+      formTitle: 'Zakažite konsultacije',
+      templateId: 'template_wiovzql'
     }
   };
 
@@ -46,10 +52,30 @@ const Konsultacije = () => {
     setIsSubmitting(true);
 
     try {
+      // EmailJS podaci
+      const serviceId = 'service_ol8y2lm';
+      const templateId = usluge[trenutnaUsluga]?.templateId || 'template_wiovzql';
+      const publicKey = 'UejGRX_Xnc55QIKVQ';
+
+      // Podaci za email
+      const templateParams = {
+        ime: formData.ime,
+        email: formData.email,
+        telefon: formData.telefon,
+        poruka: formData.poruka,
+        usluga: trenutnaUsluga
+      };
+
+      // Pošalji email
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      // Simuliraj delay za bolji UX
       await new Promise(resolve => setTimeout(resolve, 1000));
+      
       setIsSubmitted(true);
     } catch (error) {
-      alert('Došlo je do greške. Pokušajte ponovo.');
+      console.error('Email error:', error);
+      alert('Došlo je do greške pri slanju poruke. Pokušajte ponovo.');
     } finally {
       setIsSubmitting(false);
     }
@@ -101,7 +127,6 @@ const Konsultacije = () => {
       <div className={styles.pageContent}>
         <div className={styles.contentContainer}>
           <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-            {/* SAMO FORMA NASLOV - KAO KOD KONTAKTA */}
             <h1 className={styles.formTitle}>{usluga.formTitle}</h1>
             
             <form onSubmit={handleSubmit} className={styles.contactForm}>

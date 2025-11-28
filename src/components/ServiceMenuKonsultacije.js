@@ -11,9 +11,9 @@ const ServiceMenuKonsultacije = () => {
     const usluga = urlParams.get('usluga');
     
     const usluge = {
-      osiguranje: 'Konsultacije za osiguranje',
-      mentorstvo: 'Konsultacije za mentorstvo', 
-      ma: 'Konsultacije za M&A'
+      osiguranje: 'Osiguranje',
+      mentorstvo: 'Gradnja prodajnog sistema', 
+      ma: 'M&A'
     };
     
     return usluge[usluga] || 'Konsultacije';
