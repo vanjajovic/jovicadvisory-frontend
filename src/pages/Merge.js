@@ -27,7 +27,7 @@ const MA = () => {
               </ul>
             </div>
             <QuestionButton 
-              text="Imaš li pitanja o prodaji kompanije?"
+              text="Imate li pitanja o prodaji kompanije?"
               to="/konsultacije?usluga=ma"
             />
           </div>
@@ -59,7 +59,7 @@ const DealSourcing = () => {
               </ul>
             </div>
             <QuestionButton 
-              text="Imaš li pitanja o kupovini kompanije?"
+              text="Imate li pitanja o kupovini kompanije?"
               to="/konsultacije?usluga=ma"
             />
           </div>

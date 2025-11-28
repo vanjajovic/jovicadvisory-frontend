@@ -19,11 +19,11 @@ const Mentorstvo = () => {
             <h2>Sadržaj</h2>
             <div className={styles.mentorstvoPrednosti}>
               <ul>
-                <li>Personalizovani rad</li>
-                <li>Analiza specifičnih izazova</li>
-                <li>Prilagođena strategija i taktike</li>
-                <li>Redovni feedback i praćenje napretka</li>
-                <li>Dugoročni plan razvoja</li>
+                <li>Prodajni sistem u skladu sa strategijom razvoja kompanije</li>
+                <li>Kreiranje prodajnog sistema</li>
+                <li>Postavljanje prodajnih ciljeva</li>
+                <li>Implementacija i prenos prodajnog sistema na korisnike</li>
+                <li>Dugoročno praćenje i podrška</li>
               </ul>
              <QuestionButton />
             </div>

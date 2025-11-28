@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './QuestionButton.module.css';
 
 const QuestionButton = ({ 
-  text = "Imaš li pitanja o gradnji prodajnog sistema?", 
+  text = "Imate li pitanja o gradnji prodajnog sistema?", 
   onClick,
   to = "/konsultacije?usluga=mentorstvo"
 }) => {
